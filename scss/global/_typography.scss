@@ -9,15 +9,23 @@ h4 {
 }
 
 h1 {
-  @include u.fs-fluid(u.rem(375), u.rem(1200), u.rem(36), u.rem(48));
+  @include u.fs-fluid(u.rem(375), u.rem(1200), u.rem(36), u.rem(50));
+  background-color: var(--color-blue);
+  background-image: var(--background-gradiant);
+  background-size: 100%;
+  background-repeat: repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
 }
 
 h2 {
-  @include u.fs-fluid(u.rem(375), u.rem(1200), u.rem(28), u.rem(36));
+  @include u.fs-fluid(u.rem(375), u.rem(1200), u.rem(28), u.rem(30));
 }
 
 p {
-  @include u.fs-fluid(u.rem(375), u.rem(1200), u.rem(16), u.rem(18));
+  @include u.fs-fluid(u.rem(375), u.rem(1200), u.rem(18), u.rem(20));
   line-height: 1.5;
   font-weight: 300;
 
