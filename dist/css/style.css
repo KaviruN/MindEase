@@ -86,4 +86,9 @@ p > a:hover {
 em {
   font-style: normal;
   background: var(--color-highlight);
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
 }/*# sourceMappingURL=style.css.map */
