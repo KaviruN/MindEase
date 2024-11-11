@@ -1,0 +1,24 @@
+.flex {
+    &__support{
+        display: flex;
+        
+        // gap: ;
+        
+        &-content {
+            display: flex;
+            margin-left: 2.5em;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        & p {
+            padding: 0;
+            margin: 0;
+        }
+    }
+
+    // &__call {
+
+    // }
+
+}

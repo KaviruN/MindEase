@@ -1,0 +1,11 @@
+.flex{
+    &__icons {
+        color: hsl(0, 0%, 100%);
+        background: var(--background-gradiant);
+        padding: 1.25rem;
+        font-size: 1.25rem;
+        border-radius: .4em;
+        height: auto;
+        align-self: center;
+    }
+}
