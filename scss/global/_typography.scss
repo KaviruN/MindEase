@@ -19,6 +19,7 @@ h2 {
 p {
   @include u.fs-fluid(u.rem(375), u.rem(1200), u.rem(16), u.rem(18));
   line-height: 1.5;
+  font-weight: 400;
 
   &.small {
     font-size: u.rem(13);
