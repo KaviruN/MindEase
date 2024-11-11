@@ -113,6 +113,7 @@ em {
 
 .flex__support {
   display: flex;
+  margin-top: 2em;
 }
 .flex__support-content {
   display: flex;
@@ -196,4 +197,16 @@ em {
   flex-direction: column;
   gap: 1rem;
   padding: 1.5rem;
+}
+@media (min-width: 768px) {
+  .flex {
+    flex-direction: row;
+    gap: 2rem;
+    padding: 2rem;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .flex .flex__container {
+    width: 40%;
+  }
 }/*# sourceMappingURL=style.css.map */
