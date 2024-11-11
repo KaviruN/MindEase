@@ -21,7 +21,7 @@ h1 {
 }
 
 h2 {
-  @include u.fs-fluid(u.rem(375), u.rem(1200), u.rem(30), u.rem(36));
+  @include u.fs-fluid(u.rem(375), u.rem(1200), u.rem(28), u.rem(30));
 }
 
 p {
