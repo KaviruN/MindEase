@@ -46,7 +46,7 @@ p {
   font-size: 1rem;
   font-size: clamp(1rem, 0.9431818182rem + 0.2424242424vw, 1.125rem);
   line-height: 1.5;
-  font-weight: 400;
+  font-weight: 300;
 }
 p.small {
   font-size: 0.8125rem;
