@@ -1,0 +1,14 @@
+@use '../util/' as u;
+
+.hero {
+  &__wrapper {
+    display: grid;
+    gap: 20px;
+
+    @include u.breakpoint(medium) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+      align-items: center;
+    }
+  }
+}

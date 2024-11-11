@@ -1,0 +1,14 @@
+@use '../util/' as u;
+
+.footer {
+  text-align: center;
+  padding-block: 14px;
+
+  @include u.breakpoint(medium) {
+    padding-block: 20px;
+  }
+
+  p {
+    margin: 0;
+  }
+}
