@@ -202,6 +202,10 @@ em {
   border: 2px solid var(--color-blue);
 }
 
+.register {
+  background-image: url(../../img/re-bg.jpg);
+}
+
 .flex {
   display: flex;
   flex-direction: column;
