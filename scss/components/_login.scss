@@ -8,7 +8,7 @@
         align-items: center;
         text-align: center;
         // gap: 1em;
-        border-radius: 5%;
+        border-radius: 2.1em;
         // margin: 2em;
         // min-height: 60vh;
 
@@ -29,11 +29,17 @@
         & label {
             color: hsl(217, 19%, 27%);
             font-size: 1rem;
-            margin-bottom: 1em;
+            margin-bottom: .25em;
+            text-align: left;
+            width: 90%;
+            margin-left: 1em;
+            
+
         }
         & label:first-child{
             margin-top: 2em;
         }
+
 
         & input {
             width: 90%;
@@ -52,26 +58,6 @@
 
     }
     
-    &__button {
-        background: var(--background-gradiant);
-        color: hsl(0, 0%, 100%);
-        padding: 1em;
-        border-radius: 1.1em;
-        font-size: 1rem;
-        width: 90%;
-        cursor: pointer;
-        transition: all 0.3s;
-        border: none;
-        border: 2px solid transparent;
-        margin-top: 2em;
-    }
-
-    &__button:hover,
-    &__button:focus {
-        transition: background-color 0.3s;
-        background: linear-gradient(14deg, #1d4ed8, #7e22ce);
-        border: 2px solid var(--color-blue);
-    }
 
     &__register a:hover{
         color: var(--color-blue);

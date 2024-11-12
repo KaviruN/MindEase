@@ -134,7 +134,7 @@ em {
   justify-content: center;
   align-items: center;
   text-align: center;
-  border-radius: 5%;
+  border-radius: 2.1em;
 }
 .flex__login form h2 {
   color: #374151;
@@ -150,7 +150,10 @@ em {
 .flex__input label {
   color: hsl(217, 19%, 27%);
   font-size: 1rem;
-  margin-bottom: 1em;
+  margin-bottom: 0.25em;
+  text-align: left;
+  width: 90%;
+  margin-left: 1em;
 }
 .flex__input label:first-child {
   margin-top: 2em;
@@ -167,6 +170,13 @@ em {
 .flex__input input:focus {
   border: 2px solid black;
 }
+.flex__register a:hover {
+  color: var(--color-blue);
+}
+.flex .fa-heart {
+  color: red;
+}
+
 .flex__button {
   background: var(--background-gradiant);
   color: hsl(0, 0%, 100%);
@@ -179,17 +189,12 @@ em {
   border: none;
   border: 2px solid transparent;
   margin-top: 2em;
+  font-weight: 600;
 }
 .flex__button:hover, .flex__button:focus {
   transition: background-color 0.3s;
   background: linear-gradient(14deg, #1d4ed8, #7e22ce);
   border: 2px solid var(--color-blue);
-}
-.flex__register a:hover {
-  color: var(--color-blue);
-}
-.flex .fa-heart {
-  color: red;
 }
 
 .flex {
