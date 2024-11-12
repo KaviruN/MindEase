@@ -1,31 +1,7 @@
 .flex {
     color: hsla(0, 0%, 100%, 0.773);
-    &__register {
-        
-        color: hsla(0, 0%, 100%, 0.773);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        max-width: 600px;
-        border-radius: 2.1em;
-        background-color: hsla(0, 0%, 100%, 0.159);
-        padding: 1.5em;
-        backdrop-filter: blur(8px); // Apply background blur
-        -webkit-backdrop-filter: blur(8px); // For Safari support
-    }
   
     &__register form {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      // gap: 1em;
-      // margin: 2em;
-      // min-height: 60vh;
-      max-width: 600px;
-      border-radius: 2.1em;
 
       & h3 {
         color: hsla(0, 0%, 100%, 0.773);

@@ -1,5 +1,45 @@
 .flex {
     color: hsla(0, 0%, 100%, 0.773);
+
+    &__input {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+
+      & label {
+          color: hsl(217, 19%, 27%);
+          font-size: 1rem;
+          margin-bottom: .25em;
+          text-align: left;
+          width: 90%;
+          margin-left: 1em;
+          
+
+      }
+      & label:first-child{
+          margin-top: 2em;
+      }
+
+
+      & input {
+          width: 90%;
+          padding: 1em;
+          border-radius: 1.1em;
+          border: 1px solid var(--color-text);
+          margin-bottom: 1em;
+          outline: none;
+          font-size: 1rem;
+      }
+
+      & input:focus {
+          border: 2px solid black;
+      }
+
+
+  }
+
     &__form {
         
         color: hsla(0, 0%, 100%, 0.773);
@@ -35,4 +75,6 @@
         font-weight: 500;
       }
     }
+
+    
   }
