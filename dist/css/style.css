@@ -1,5 +1,5 @@
 :root {
-  --color-background: hsl(216, 93%, 94%);
+  --color-background: hsla(0, 0%, 100%, 0.773);
   --color-header-bg: hsl(240, 37%, 20%);
   --color-blue: hsl(221, 83%, 53%);
   --color-text: hsl(215, 14%, 34%);
@@ -218,9 +218,6 @@ em {
   font-weight: 500;
 }
 
-.flex {
-  color: hsla(0, 0%, 100%, 0.773);
-}
 .flex__input {
   display: flex;
   flex-direction: column;
