@@ -126,6 +126,10 @@ em {
   margin: 0;
 }
 
+.flex__login {
+  display: flex;
+  justify-content: center;
+}
 .flex__login form {
   background-color: var(--color-background);
   padding: 1.5em;
@@ -135,6 +139,7 @@ em {
   align-items: center;
   text-align: center;
   border-radius: 2.1em;
+  max-width: 600px;
 }
 .flex__login form h2 {
   color: #374151;
