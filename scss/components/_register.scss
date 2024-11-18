@@ -1,14 +1,16 @@
 .flex {
-    color: hsla(0, 0%, 100%, 0.773);
-  
-    &__register form {
-
-      & h3 {
-        color: hsla(0, 0%, 100%, 0.773);
-      }
-
-      & h2 {
-        font-weight: 500;
-      }
+    color: hsl(0, 0%, 100%);
+    & h2 {
+      line-height: 1.2;
     }
+    // &__register form {
+
+    //   & h3 {
+    //     color: hsla(0, 0%, 100%, 0.773);
+    //   }
+
+    //   & h2 {
+    //     font-weight: 500;
+    //   }
+    // }
   }

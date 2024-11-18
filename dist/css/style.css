@@ -177,18 +177,6 @@ em {
   margin: 0;
 }
 
-.flex__registerlink a {
-  color: hsl(0, 0%, 100%);
-  font-weight: 500;
-}
-.flex__registerlink a:hover {
-  color: var(--color-blue);
-  font-weight: 600;
-}
-.flex .fa-heart {
-  color: red;
-}
-
 .flex__button {
   background: var(--background-gradiant);
   color: hsl(0, 0%, 100%);
@@ -209,15 +197,23 @@ em {
 }
 
 .flex {
-  color: hsla(0, 0%, 100%, 0.773);
+  color: hsl(0, 0%, 100%);
 }
-.flex__register form h3 {
-  color: hsla(0, 0%, 100%, 0.773);
-}
-.flex__register form h2 {
-  font-weight: 500;
+.flex h2 {
+  line-height: 1.2;
 }
 
+.flex__registerlink a {
+  color: hsl(0, 0%, 100%);
+  font-weight: 500;
+}
+.flex__registerlink a:hover {
+  color: var(--color-blue);
+  font-weight: 600;
+}
+.flex .fa-heart {
+  color: red;
+}
 .flex__input {
   display: flex;
   flex-direction: column;
@@ -243,11 +239,19 @@ em {
   margin-bottom: 1em;
   font-size: 1rem;
   border: none;
+  outline: 3px solid transparent;
 }
 .flex__input input:focus, .flex__input input:hover {
   outline: 3px solid #0539bd;
 }
+.flex__input input:user-invalid {
+  outline-color: hsl(0, 100%, 50%);
+}
+.flex__input input:user-valid {
+  outline-color: hsl(130, 91%, 31%);
+}
 .flex__form {
+  margin-top: 2em;
   color: var(--color-form-text);
   display: flex;
   justify-content: center;

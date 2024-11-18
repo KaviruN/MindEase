@@ -1,4 +1,17 @@
 .flex {
+  &__registerlink a{
+    color: hsl(0, 0%, 100%);
+    font-weight: 500;
+}
+
+  &__registerlink a:hover{
+    color: var(--color-blue);
+    font-weight: 600;
+}
+
+  .fa-heart {
+    color: red;
+}
 
     &__input {
       display: flex;
@@ -30,12 +43,21 @@
           margin-bottom: 1em;
           font-size: 1rem;
           border: none;
+          outline: 3px solid transparent;
           
       }
 
       & input:focus,
       & input:hover {
         outline: 3px solid #0539bd;
+      }
+
+      & input:user-invalid {
+        outline-color: hsl(0, 100%, 50%);
+      }
+
+      & input:user-valid {
+        outline-color: hsl(130, 91%, 31%);
       }
 
       // & input:active{
@@ -46,7 +68,7 @@
   }
 
     &__form {
-        
+        margin-top: 2em;
         color: var(--color-form-text);
         display: flex;
         justify-content: center;
@@ -80,6 +102,8 @@
         font-weight: 500;
       }
     }
+
+    
 
     
   }
