@@ -105,20 +105,6 @@ em {
   min-height: 100vh;
 }
 
-.register::before {
-  content: "";
-  background-image: url(../../img/re-bg.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: left top;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -1;
-}
-
 .flex {
   display: flex;
   flex-direction: column;
@@ -140,11 +126,33 @@ em {
 }
 
 .container {
+  position: relative;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-image: url("../../img/re-bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: left top;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+.container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: -1;
+  min-height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: left top;
 }
 
 .flex__icons {

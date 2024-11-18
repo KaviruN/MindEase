@@ -6,17 +6,17 @@
     min-height: 100vh;// Ensure the element takes the full width
 }
 
-.register::before {
-  content: "";
-  background-image: url(../../img/re-bg.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: left top;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -1;
+// .register::before {
+//   content: "";
+//   background-image: url(../../img/re-bg.jpg);
+//   background-size: cover;
+//   background-repeat: no-repeat;
+//   background-position: left top;
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   right: 0;
+//   bottom: 0;
+//   z-index: -1;
 
-}
+// }
