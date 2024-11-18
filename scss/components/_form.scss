@@ -41,18 +41,16 @@
 
     &__form {
         
-        color: hsla(0, 0%, 100%, 0.773);
+        color: var(--color-form-text);
         display: flex;
         justify-content: center;
         align-items: center;
         text-align: center;
         max-width: 600px;
         border-radius: 2.1em;
-        background-color: hsla(0, 0%, 100%, 0.159);
+        background-color:  var(--color-background);
         padding: 1.5em;
-        backdrop-filter: blur(8px); // Apply background blur
-        -webkit-backdrop-filter: blur(8px); // For Safari support
-    }
+}
   
     &__form form {
       display: flex;
@@ -67,7 +65,7 @@
       border-radius: 2.1em;
 
       & h3 {
-        color: hsla(0, 0%, 100%, 0.773);
+        color: var(--color-form-text);
       }
 
       & h2 {

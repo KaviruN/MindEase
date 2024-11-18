@@ -1,6 +1,7 @@
 :root {
-  --color-background: hsla(0, 0%, 100%, 0.773);
+  --color-background: hsla(215, 94%, 94%, 0.447);
   --color-header-bg: hsl(240, 37%, 20%);
+  --color-form-text: hsl(0, 0%, 0%);
   --color-blue: hsl(221, 83%, 53%);
   --color-text: hsl(215, 14%, 34%);
   --color-purple: hsl(271, 81%, 56%);
@@ -95,14 +96,6 @@ p > a:hover {
 em {
   font-style: normal;
   background: var(--color-highlight);
-}
-
-.register {
-  position: relative;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top left;
-  min-height: 100vh;
 }
 
 .flex {
@@ -206,14 +199,13 @@ em {
   cursor: pointer;
   transition: all 0.3s;
   border: none;
-  border: 2px solid transparent;
+  border: none;
   margin-top: 2em;
   font-weight: 600;
 }
 .flex__button:hover, .flex__button:focus {
   transition: background-color 0.3s;
   background: linear-gradient(14deg, #1d4ed8, #7e22ce);
-  border: 2px solid var(--color-blue);
 }
 
 .flex {
@@ -257,17 +249,15 @@ em {
   border: 2px solid black;
 }
 .flex__form {
-  color: hsla(0, 0%, 100%, 0.773);
+  color: var(--color-form-text);
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   max-width: 600px;
   border-radius: 2.1em;
-  background-color: hsla(0, 0%, 100%, 0.159);
+  background-color: var(--color-background);
   padding: 1.5em;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
 }
 .flex__form form {
   display: flex;
@@ -279,7 +269,7 @@ em {
   border-radius: 2.1em;
 }
 .flex__form form h3 {
-  color: hsla(0, 0%, 100%, 0.773);
+  color: var(--color-form-text);
 }
 .flex__form form h2 {
   font-weight: 500;
