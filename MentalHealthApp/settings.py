@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
-
+from urllib.parse import urlparse
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -76,7 +76,7 @@ WSGI_APPLICATION = 'MentalHealthApp.wsgi.application'
 # Add these at the top of your settings.py
 
 # Replace the DATABASES section of your settings.py with this
-tmpPostgres = 'postgresql://MentalHealthApp_owner:bwIv7tnS0QTl@ep-calm-cherry-a16uozp1.ap-southeast-1.aws.neon.tech/MentalHealthApp?sslmode=require'
+tmpPostgres = urlparse('postgresql://MentalHealthApp_owner:bwIv7tnS0QTl@ep-calm-cherry-a16uozp1.ap-southeast-1.aws.neon.tech/MentalHealthApp?sslmode=require')
 
 DATABASES = {
     'default': {
