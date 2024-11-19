@@ -4,43 +4,43 @@
 
 {% block content %}
 <div class="flex__form">
-  <form method="post">
+  <form method="post" action="{% url 'user_auth:sign_up' %}">
     {% csrf_token %}
     <h2 class="flex__logintitle">Start Your Journey to a Healthier Mind</h2>
     <div class="flex__input">
       <label for="first_name"><h3>First Name</h3></label>
       {{ form.first_name }} {% if form.first_name.errors %}
-      <div class="error">{{ form.first_name.errors }}</div>
+      <div class="flex__input--error">{{ form.first_name.errors }}</div>
       {% endif %}
     </div>
     <div class="flex__input">
       <label for="last_name"><h3>Last Name</h3></label>
       {{ form.last_name }} {% if form.last_name.errors %}
-      <div class="error">{{ form.last_name.errors }}</div>
+      <div class="flex__input--error">{{ form.last_name.errors }}</div>
       {% endif %}
     </div>
     <div class="flex__input">
       <label for="email"><h3>Email</h3></label>
       {{ form.email }} {% if form.email.errors %}
-      <div class="error">{{ form.email.errors }}</div>
+      <div class="flex__input--error">{{ form.email.errors }}</div>
       {% endif %}
     </div>
     <div class="flex__input">
       <label for="username"><h3>Username</h3></label>
       {{ form.username }} {% if form.username.errors %}
-      <div class="error">{{ form.username.errors }}</div>
+      <div class="flex__input--error">{{ form.username.errors }}</div>
       {% endif %}
     </div>
     <div class="flex__input">
       <label for="password1"><h3>Password</h3></label>
       {{ form.password1 }} {% if form.password1.errors %}
-      <div class="error">{{ form.password1.errors }}</div>
+      <div class="flex__input--error">{{ form.password1.errors }}</div>
       {% endif %}
     </div>
     <div class="flex__input">
       <label for="password2"><h3>Retype Password</h3></label>
       {{ form.password2 }} {% if form.password2.errors %}
-      <div class="error">{{ form.password2.errors }}</div>
+      <div class="flex__input--error">{{ form.password2.errors }}</div>
       {% endif %}
     </div>
     <button type="submit" class="flex__button"><h2>Sign Up</h2></button>
