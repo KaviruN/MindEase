@@ -20,6 +20,15 @@
       justify-content: center;
       align-items: center;
 
+      & select{
+        width: 90%;
+        padding: 1em;
+        font-size: 1rem;
+        border-radius: 1.1em;
+        background-color: white;
+
+      }
+
       & label {
           color: hsl(217, 19%, 27%);
           font-size: 1rem;
@@ -27,7 +36,10 @@
           text-align: left;
           width: 90%;
           margin-left: 1em;
-          
+      
+      & label option{
+        border-radius: 1.1em;
+      }
 
       }
       & label:first-child{
@@ -59,6 +71,7 @@
       & input:user-valid {
         outline-color: hsl(130, 91%, 31%);
       }
+
 
       // & input:active{
       //   outline-color: red;
@@ -92,7 +105,8 @@
       // min-height: 60vh;
       max-width: 600px;
       border-radius: 2.1em;
-  
+      
+
 
       & h3 {
         color: var(--color-form-text);
