@@ -1,0 +1,13 @@
+:root {
+  --color-background: hsla(0, 0%, 2%, 0.593);
+  --color-header-bg: hsl(240, 37%, 20%);
+  --color-form-text: hsl(0, 0%, 100%);
+  --color-blue: hsl(221, 83%, 53%);
+  --color-text: hsl(215, 14%, 34%);
+  --color-purple: hsl(271, 81%, 56%);
+  --background-gradiant: linear-gradient(14deg, var(--color-blue), var(--color-purple));
+  // --color-highlight: hsl(296, 99%, 30%);
+}
+
+
+// tailwind button color - #3b82f6 to #2563eb
