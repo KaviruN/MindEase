@@ -42,10 +42,21 @@
       {{ form.password2 }} {% if form.password2.errors %}
       <div class="flex__form--error">{{ form.password2.errors }}</div>
       {% endif %}
-      {% comment %} <div class="flex__form--error"><ul class="errorlist"><li>A user with that username already exists.</li></ul></div> {% endcomment %}
+    </div>
+    <div class="flex__input">
+      <label for="birthday"><h3>Birthday</h3></label>
+      {{ form.birthday }} {% if form.birthday.errors %}
+      <div class="flex__form--error">{{ form.birthday.errors }}</div>
+      {% endif %}
+    </div>
+    <div class="flex__input">
+      <label for="gender"><h3>Gender</h3></label>
+      {{ form.gender }} {% if form.gender.errors %}
+      <div class="flex__form--error">{{ form.gender.errors }}</div>
+      {% endif %}
     </div>
     <button type="submit" class="flex__button"><h2>Sign Up</h2></button>
-    <p class="flex__registerlink"><a target="blank" href="register.html">Forget Password ?</a></p>
+    <p class="flex__registerlink"><a target="blank" href="register.html">Forget Password?</a></p>
     <p><i class="fa-regular fa-heart"></i> Your privacy and confidentiality are our top priority</p>
   </form>
 </div>

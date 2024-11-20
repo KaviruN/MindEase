@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-
+from .models import UserProfile
 class SignUpForm(UserCreationForm):
     first_name = forms.CharField(required=True, widget=forms.TextInput(attrs={
         'placeholder': 'Enter your First Name'
@@ -21,7 +21,21 @@ class SignUpForm(UserCreationForm):
     password2 = forms.CharField(label='Confirm Password', widget=forms.PasswordInput(attrs={
         'placeholder': 'Confirm your Password'
     }))
+    birthday = forms.DateField(required=True, widget=forms.PasswordInput(attrs={
+        'type': 'date'
+    }))
+    gender = forms.ChoiceField(choices=[('M', 'Male'), ('F', 'Female')], required=True)
 
     class Meta:
         model = User
-        fields = ('first_name', 'last_name', 'email', 'username', 'password1', 'password2')
+        fields = ('first_name', 'last_name', 'email', 'username', 'password1', 'password2', 'birthday', 'gender')
+
+    def save(self, commit=True):
+        user = super().save(commit=False)
+        user.save()
+        UserProfile.objects.create(
+            user=user,
+            birthday=self.cleaned_data['birthday'],
+            gender=self.cleaned_data['gender']
+        )
+        return user
