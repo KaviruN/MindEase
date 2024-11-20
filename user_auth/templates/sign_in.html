@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %}Sign In{% endblock %}
+
+{% block content %}
+<div class="flex__form">
+    <form method="post">{% csrf_token %}
+        <h2 class="flex__logintitle">Welcome Back, Your Wellness Awaits!</h2>
+        
+        {% if form.non_field_errors %}
+            <div class="error">
+                {% for error in form.non_field_errors %}
+                    <p>{{ error }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+        
+        <div class="flex__input">
+            <label for="username"><h3>Username</h3></label>
+            <input type="text" id="username" name="username" placeholder="Enter your Username">
+            {% if form.username.errors %}
+                <div class="error">
+                    {% for error in form.username.errors %}
+                        <p>{{ error }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+        <div class="flex__input">
+            <label for="password"><h3>Password</h3></label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" minlength="8">
+            {% if form.password.errors %}
+                <div class="error">
+                    {% for error in form.password.errors %}
+                        <p>{{ error }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+        <button class="flex__button"><h2>Login</h2></button>
+        <p class="flex__registerlink"><a target="blank" href="register.html">Forgot Password?</a></p>
+        <p class="flex__registerlink">Don't have an account? <a target="blank" href="register.html">Sign up</a></p>
+        <p><i class="fa-regular fa-heart"></i> Your privacy and confidentiality are our top priority</p>
+    </form>
+</div>
+{% endblock %}

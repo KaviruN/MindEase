@@ -5,6 +5,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate
 from .forms import SignUpForm
 from django.http import HttpResponse
+from django.contrib.auth.forms import AuthenticationForm
 
 def sign_up(request):
     if request.method == 'POST':
@@ -18,8 +19,28 @@ def sign_up(request):
             user.save()
             raw_password = form.cleaned_data.get('password1')
             user = authenticate(username=user.username, password=raw_password)
-            login(request, user)
-            return HttpResponse('Don Log in')  # Redirect to home page or any other page
+            # login(request, user) ## with this user do not login automatically
+            return redirect('user_auth:sign_in')  # Redirect to home page or any other page
     else:
         form = SignUpForm()
     return render(request, 'sign_up.html', {'form': form})
+
+
+
+def sign_in(request):
+    if request.method == 'POST':
+        form = AuthenticationForm(request, data=request.POST)
+        if form.is_valid():
+            username = form.cleaned_data.get('username')
+            password = form.cleaned_data.get('password')
+            user = authenticate(request, username=username, password=password)
+            if user is not None:
+                login(request, user)
+                return HttpResponse('Done Log in')  # Redirect to home page or any other page
+            else:
+                form.add_error(None, 'Invalid username or password')
+        else:
+            form.add_error(None, 'Invalid username or password')
+    else:
+        form = AuthenticationForm()
+    return render(request, 'sign_in.html', {'form': form})
