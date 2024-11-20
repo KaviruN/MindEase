@@ -11,6 +11,7 @@
     background-position: left top;
     backdrop-filter: blur(8px); // Apply background blur
     -webkit-backdrop-filter: blur(8px); 
+    padding: 2em;
 
     &::before {
         content: '';

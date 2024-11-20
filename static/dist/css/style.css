@@ -131,6 +131,7 @@ em {
   background-position: left top;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
+  padding: 2em;
 }
 .container::before {
   content: "";

@@ -79,18 +79,26 @@ WSGI_APPLICATION = 'MentalHealthApp.wsgi.application'
 # Add these at the top of your settings.py
 
 # Replace the DATABASES section of your settings.py with this
-tmpPostgres = urlparse('postgresql://MentalHealthApp_owner:bwIv7tnS0QTl@ep-calm-cherry-a16uozp1.ap-southeast-1.aws.neon.tech/MentalHealthApp?sslmode=require')
+# tmpPostgres = urlparse('postgresql://MentalHealthApp_owner:bwIv7tnS0QTl@ep-calm-cherry-a16uozp1.ap-southeast-1.aws.neon.tech/MentalHealthApp?sslmode=require')
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': tmpPostgres.path.replace('/', ''),
+#         'USER': tmpPostgres.username,
+#         'PASSWORD': tmpPostgres.password,
+#         'HOST': tmpPostgres.hostname,
+#         'PORT': 5432,
+#     }
+# }
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': tmpPostgres.path.replace('/', ''),
-        'USER': tmpPostgres.username,
-        'PASSWORD': tmpPostgres.password,
-        'HOST': tmpPostgres.hostname,
-        'PORT': 5432,
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
