@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+
+
+    <div class="container">
+        <div class="container__form">
+            <div class="flex">
+                <div class="flex__profile">
+                    <h1 class="flex__profile--title">Profile</h1>
+                    <div class="flex__form flex__profile--form">
+                        <form>
+                            <h2 class="flex__profile--subtitle"><strong>Fist Name</strong> - {{ user.first_name }}</h2>
+                            <h2 class="flex__profile--subtitle"><strong>Last Name</strong> - {{ user.last_name }}</h2>
+                            <h2 class="flex__profile--subtitle"><strong>Birthday</strong> - {{ profile.birthday }}</h2>
+                            <h2 class="flex__profile--subtitle"><strong>Age</strong> - {{ age }}</h2>
+                            <h2 class="flex__profile--subtitle"><strong>Gender</strong> - {{ profile.gender }}</h2>
+                            <button type="submit" class="flex__button"><a href="{% url 'user_auth:sign_out' %}" style="color: white;"><h2>Sign Out</h2></a></button>
+                            <p><i class="fa-regular fa-heart"></i> Your privacy and confidentiality are our top priority</p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <footer class="footer">
+                <div class="footer__content">
+                    <img src="../static/img/logo.png" width="150px" alt="" srcset="">
+                   
+                    <div class="footer__icons">
+                        <i class="fa-brands fa-square-facebook"></i>
+                        <i class="fa-brands fa-square-x-twitter"></i>
+                        <i class="fa-brands fa-square-instagram"></i>
+                    </div>
+                </div>
+                <p>"Your mental health matters. We're here to support your wellness journey.</p>
+                <div class="footer__leagle">© MindEase 2024</div>
+            </footer>
+    </div>
+
+
+
+{% endblock %}
+
+

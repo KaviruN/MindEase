@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 # Create your views here.
 from django.shortcuts import render, redirect
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login, authenticate, logout
 from .forms import SignUpForm
 from django.http import HttpResponse
 from django.contrib.auth.forms import AuthenticationForm
@@ -36,7 +36,7 @@ def sign_in(request):
             user = authenticate(request, username=username, password=password)
             if user is not None:
                 login(request, user)
-                return HttpResponse('Done Log in')  # Redirect to home page or any other page
+                return redirect('pages:profile')  # Redirect to home page or any other page
             else:
                 form.add_error(None, 'Invalid username or password')
         else:
@@ -44,3 +44,11 @@ def sign_in(request):
     else:
         form = AuthenticationForm()
     return render(request, 'sign_in.html', {'form': form})
+
+def sign_out(request):
+    if request.user.is_authenticated:
+        logout(request)
+        return render(request, 'sign_out.html')
+    
+    else:
+        return redirect('user_auth:sign_in')
