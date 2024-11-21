@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+
+
+    <div class="container register">
+            <div class="flex">
+                <div class="flex__profile">
+                    <h1 class="flex__profile--title">Profile</h1>
+                    <div class="flex__form flex__profile--form">
+                        <form>
+                            <h2 class="flex__profile--subtitle"><strong>Fist Name</strong> - {{ user.first_name }}</h2>
+                            <h2 class="flex__profile--subtitle"><strong>Last Name</strong> - {{ user.last_name }}</h2>
+                            <h2 class="flex__profile--subtitle"><strong>Birthday</strong> - {{ profile.gender }}</h2>
+                            <h2 class="flex__profile--subtitle"><strong>Age</strong> - {{ age }}</h2>
+                            <h2 class="flex__profile--subtitle"><strong>Gender</strong> - {{ profile.gender }}</h2>
+                            <button type="submit" class="flex__button"><a href="{% url 'user_auth:sign_out' %}" style="color: white;"><h2>Sign Out</h2></a></button>
+                            
+                        </form>
+                    </div>
+                </div>
+            </div>
+    </div>
+
+
+
+{% endblock %}
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>MindEase Sign Up</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;500;600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/4deb7e25f1.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://github.com/KaviruN/mental-health-app/blob/53169d928a73d6593e1bd6a9750b5ecb9d4f5cd4/static/dist/css/style.css"> -->
+    <link rel="icon" href="img/a.jpg" type="image/x-icon"/>
+    <link rel="stylesheet" href="../../static/dist/css/style.css">
+</head>
+<body>
+    <div class="container register">
+            <div class="flex">
+                <div class="flex__profile">
+                    <h1 class="flex__profile--title">Profile</h1>
+                    <div class="flex__form flex__profile--form">
+                        <form>
+                            <h2 class="flex__profile--subtitle"><strong>Fist Name</strong> - {{ user.first_name }}</h2>
+                            <h2 class="flex__profile--subtitle"><strong>Last Name</strong> - {{ user.last_name }}</h2>
+                            <h2 class="flex__profile--subtitle"><strong>Birthday</strong> - {{ profile.gender }}</h2>
+                            <h2 class="flex__profile--subtitle"><strong>Age</strong> - {{ age }}</h2>
+                            <h2 class="flex__profile--subtitle"><strong>Gender</strong> - {{ profile.gender }}</h2>
+                            <button type="submit" class="flex__button"><h2>Sign Out</h2></button>
+                            
+                        </form>
+                    </div>
+                </div>
+            </div>
+    </div>
+</body>
+</html> -->

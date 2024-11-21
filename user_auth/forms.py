@@ -24,7 +24,7 @@ class SignUpForm(UserCreationForm):
     birthday = forms.DateField(required=True, widget=forms.PasswordInput(attrs={
         'type': 'date'
     }))
-    gender = forms.ChoiceField(choices=[('M', 'Male'), ('F', 'Female'), ('O', 'Other')], required=True)
+    gender = forms.ChoiceField(choices=[('Male', 'Male'), ('Female', 'Female'), ('Other', 'Other')], required=True)
 
     class Meta:
         model = User

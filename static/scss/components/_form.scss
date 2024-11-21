@@ -1,125 +1,116 @@
 .flex {
-  &__registerlink a{
+  &__registerlink a {
     color: hsl(0, 0%, 100%);
     font-weight: 500;
-}
+  }
 
-  &__registerlink a:hover{
+  &__registerlink a:hover {
     color: var(--color-blue);
     font-weight: 600;
-}
+  }
 
   .fa-heart {
     color: red;
-}
-
-    &__input {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      justify-content: center;
-      align-items: center;
-
-      & select{
-        width: 90%;
-        padding: 1em;
-        font-size: 1rem;
-        border-radius: 1.1em;
-        background-color: white;
-
-      }
-
-      & label {
-          color: hsl(217, 19%, 27%);
-          font-size: 1rem;
-          margin-bottom: .25em;
-          text-align: left;
-          width: 90%;
-          margin-left: 1em;
-      
-      & label option{
-        border-radius: 1.1em;
-      }
-
-      }
-      & label:first-child{
-          margin-top: 2em;
-      }
-
-
-      & input {
-          width: 90%;
-          padding: 1em;
-          border-radius: 1.1em;
-          // border: 1px solid var(--color-text);
-          margin-bottom: 1em;
-          font-size: 1rem;
-          border: none;
-          outline: 3px solid transparent;
-          
-      }
-
-      & input:focus,
-      & input:hover {
-        outline: 3px solid #0539bd;
-      }
-
-      & input:user-invalid {
-        outline-color: hsl(0, 100%, 50%);
-      }
-
-      & input:user-valid {
-        outline-color: hsl(130, 91%, 31%);
-      }
-
-
-      // & input:active{
-      //   outline-color: red;
-      // }
-
-
   }
 
-    &__form {
-        margin-top: 2em;
-        color: var(--color-form-text);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        max-width: 600px;
-        border-radius: 2.1em;
-        background-color:  var(--color-background);
-        padding: 1.5em;
-        box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1), 0 2px 4px rgba(0, 0, 0, 0.4);
-}
-  
-    &__form form {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      // gap: 1em;
-      // margin: 2em;
-      // min-height: 60vh;
-      max-width: 600px;
-      border-radius: 2.1em;
-      
+  &__input {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
 
+    & select {
+      width: 90%;
+      padding: 1em;
+      font-size: 1rem;
+      border-radius: 1.1em;
+      background-color: white;
+    }
 
-      & h3 {
-        color: var(--color-form-text);
-      }
+    & label {
+      color: hsl(217, 19%, 27%);
+      font-size: 1rem;
+      margin-bottom: 0.25em;
+      text-align: left;
+      width: 90%;
+      margin-left: 1em;
 
-      & h2 {
-        font-weight: 500;
+      & label option {
+        border-radius: 1.1em;
       }
     }
-    & .fa-heart{
-      color: red;
+    & label:first-child {
+      margin-top: 2em;
     }
-    
 
-    
+    & input {
+      width: 90%;
+      padding: 1em;
+      border-radius: 1.1em;
+      // border: 1px solid var(--color-text);
+      margin-bottom: 1em;
+      font-size: 1rem;
+      border: none;
+      outline: 3px solid transparent;
+    }
+
+    & input:focus,
+    & input:hover {
+      outline: 3px solid #0539bd;
+    }
+
+    & input:user-invalid {
+      outline-color: hsl(0, 100%, 50%);
+    }
+
+    & input:user-valid {
+      outline-color: hsl(130, 91%, 31%);
+    }
+
+    // & input:active{
+    //   outline-color: red;
+    // }
   }
+
+  &__form {
+    // margin-top: 2em;
+    color: var(--color-form-text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    max-width: 600px;
+    border-radius: 2.1em;
+    background-color: var(--color-background);
+    padding: 1.5em;
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1),
+      0 2px 4px rgba(0, 0, 0, 0.4);
+    width: 100%;
+  }
+
+  &__form form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    // gap: 1em;
+    // margin: 2em;
+    // min-height: 60vh;
+    max-width: 600px;
+    border-radius: 2.1em;
+    width: 100%;
+
+    & h3 {
+      color: var(--color-form-text);
+    }
+
+    & h2 {
+      font-weight: 500;
+    }
+  }
+  & .fa-heart {
+    color: red;
+  }
+}

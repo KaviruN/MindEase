@@ -5,18 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}My Django App{% endblock %}</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    {% comment %} <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;500;600&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/4deb7e25f1.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/4deb7e25f1.js" crossorigin="anonymous"></script> {% endcomment %}
     <link rel="stylesheet" href="{% static 'dist/css/style.css' %}">
+    <link rel="icon" href="{% static 'img/a.jpg' %}" type="image/x-icon"/>
+    
 </head>
 <body>
 
-    <div class="container">
-        {% block content %}
-        {% endblock %}
-    </div>
+    
+{% block content %}{% endblock %}
+
 
 </body>
 </html>
