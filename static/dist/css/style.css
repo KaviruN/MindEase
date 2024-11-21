@@ -295,6 +295,10 @@ em {
 .flex .fa-heart {
   color: red;
 }
+.flex .signout {
+  width: 90%;
+  text-align: left;
+}
 
 .flex__form--error {
   color: red;

@@ -48,7 +48,7 @@ def sign_in(request):
 def sign_out(request):
     if request.user.is_authenticated:
         logout(request)
-        return HttpResponse('Log Out Done')
+        return render(request, 'sign_out.html')
     
     else:
         return redirect('user_auth:sign_in')
