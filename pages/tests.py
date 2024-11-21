@@ -2,8 +2,8 @@ from django.test import TestCase
 
 # Create your tests here.
 
-from datetime import datetime
+a = ['lk', 'cd']
 
-year = datetime.now().year
-
-print(year)
+if 'lk' in a:
+    print('Done')
+    profile = user.userprofile
