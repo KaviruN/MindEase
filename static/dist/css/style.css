@@ -129,7 +129,6 @@ em {
   background-position: left top;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  padding: 2em;
 }
 .container::before {
   content: "";
@@ -145,6 +144,60 @@ em {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: left top;
+}
+.container__form {
+  padding: 2em;
+}
+
+.footer {
+  background-color: var(--color-background);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+}
+.footer__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+  width: 100%;
+  padding-bottom: 0;
+}
+.footer__leagle {
+  color: hsl(0, 0%, 100%);
+  font-weight: 600;
+}
+.footer p {
+  color: hsl(0, 0%, 100%);
+  text-align: center;
+  width: 100%;
+}
+.footer__icons {
+  font-size: 2rem;
+}
+@media (min-width: 678px) {
+  .footer {
+    justify-content: space-between;
+    padding: 0 2em;
+  }
+  .footer__content {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0;
+    width: 100%;
+  }
+  .footer__leagle {
+    align-self: start;
+  }
+  .footer p {
+    text-align: left;
+    margin-top: 0;
+  }
 }
 
 .flex__icons {
@@ -275,6 +328,7 @@ em {
   padding: 1.5em;
   box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1), 0 2px 4px rgba(0, 0, 0, 0.4);
   width: 100%;
+  padding: 2em;
 }
 .flex__form form {
   display: flex;

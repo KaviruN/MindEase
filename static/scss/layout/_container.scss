@@ -11,7 +11,6 @@
     background-position: left top;
     backdrop-filter: blur(8px); // Apply background blur
     -webkit-backdrop-filter: blur(8px); 
-    padding: 2em;
 
 
     &::before {
@@ -28,5 +27,8 @@
         background-size: cover;
         background-repeat: no-repeat;
         background-position: left top;// Ensure it is on top of the container content
+    }
+    &__form{
+        padding: 2em;
     }
 }

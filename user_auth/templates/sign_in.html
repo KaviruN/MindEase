@@ -4,40 +4,56 @@
 
 {% block content %}
 <div class="container">
-    <div class="flex__form">
-        <form method="POST" action="{% url 'user_auth:sign_in' %}">{% csrf_token %}
-            <h2 class="flex__logintitle">Welcome Back, Your Wellness Awaits!</h2>
-            
-            {% if form.non_field_errors %}
-                <div class="flex__form--error">
-                    <p>Invalid username or password</p>
+    <div class="container__form">
+        <div class="flex__form">
+            <form method="POST" action="{% url 'user_auth:sign_in' %}">{% csrf_token %}
+                <h2 class="flex__logintitle">Welcome Back, Your Wellness Awaits!</h2>
+                
+                {% if form.non_field_errors %}
+                    <div class="flex__form--error">
+                        <p>Invalid username or password</p>
+                    </div>
+                {% endif %}
+                {% if form.username.errors %}
+                    <div class="flex__form--error">
+                            <p>Invalid username</p>
+                    </div>
+                {% endif %}
+                {% if form.password.errors %}
+                    <div class="flex__form--error">
+                            <p>Invalid username</p>
+                    </div>
+                {% endif %}
+                
+                <div class="flex__input">
+                    <label for="username"><h3>Username</h3></label>
+                    <input type="text" id="username" name="username" placeholder="Enter your Username">
+        
                 </div>
-            {% endif %}
-            {% if form.username.errors %}
-                <div class="flex__form--error">
-                        <p>Invalid username</p>
+                <div class="flex__input">
+                    <label for="password"><h3>Password</h3></label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" minlength="8">
                 </div>
-            {% endif %}
-            {% if form.password.errors %}
-                <div class="flex__form--error">
-                        <p>Invalid username</p>
-                </div>
-            {% endif %}
-            
-            <div class="flex__input">
-                <label for="username"><h3>Username</h3></label>
-                <input type="text" id="username" name="username" placeholder="Enter your Username">
-    
-            </div>
-            <div class="flex__input">
-                <label for="password"><h3>Password</h3></label>
-                <input type="password" id="password" name="password" placeholder="Enter your password" minlength="8">
-            </div>
-            <button class="flex__button"><h2>Login</h2></button>
-            <p class="flex__registerlink"><a target="blank" href="#">Forgot Password?</a></p>
-            <p class="flex__registerlink">Don't have an account? <a target="blank" href="{% url 'user_auth:sign_up' %}">Sign up</a></p>
-            <p><i class="fa-regular fa-heart"></i> Your privacy and confidentiality are our top priority</p>
-        </form>
+                <button class="flex__button"><h2>Login</h2></button>
+                <p class="flex__registerlink"><a target="blank" href="#">Forgot Password?</a></p>
+                <p class="flex__registerlink">Don't have an account? <a target="blank" href="{% url 'user_auth:sign_up' %}">Sign up</a></p>
+                <p><i class="fa-regular fa-heart"></i> Your privacy and confidentiality are our top priority</p>
+            </form>
+        </div>
     </div>
+    <footer class="footer">
+        <div class="footer__content">
+            <img src="../static/img/logo.png" width="150px" alt="" srcset="">
+           
+            <div class="footer__icons">
+                <i class="fa-brands fa-square-facebook"></i>
+                <i class="fa-brands fa-square-x-twitter"></i>
+                <i class="fa-brands fa-square-instagram"></i>
+            </div>
+        </div>
+        <p>"Your mental health matters. We're here to support your wellness journey.</p>
+        <div class="footer__leagle">© MindEase 2024</div>
+    </footer>
 </div>
+
 {% endblock %}

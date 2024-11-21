@@ -4,62 +4,77 @@
 
 {% block content %}
 <div class="container">
-  <div class="flex__form">
-    <form method="post" action="{% url 'user_auth:sign_up' %}">
-      {% csrf_token %}
-      <h2 class="flex__logintitle">Start Your Journey to a Healthier Mind</h2>
-      <div class="flex__input">
-        <label for="first_name"><h3>First Name</h3></label>
-        {{ form.first_name }} {% if form.first_name.errors %}
-        <div class="flex__form--error">{{ form.first_name.errors }}</div>
-        {% endif %}
-      </div>
-      <div class="flex__input">
-        <label for="last_name"><h3>Last Name</h3></label>
-        {{ form.last_name }} {% if form.last_name.errors %}
-        <div class="flex__form--error">{{ form.last_name.errors }}</div>
-        {% endif %}
-      </div>
-      <div class="flex__input">
-        <label for="email"><h3>Email</h3></label>
-        {{ form.email }} {% if form.email.errors %}
-        <div class="flex__form--error">{{ form.email.errors }}</div>
-        {% endif %}
-      </div>
-      <div class="flex__input">
-        <label for="username"><h3>Username</h3></label>
-        {{ form.username }} {% if form.username.errors %}
-        <div class="flex__form--error">{{ form.username.errors }}</div>
-        {% endif %}
-      </div>
-      <div class="flex__input">
-        <label for="password1"><h3>Password</h3></label>
-        {{ form.password1 }} {% if form.password1.errors %}
-        <div class="flex__form--error">{{ form.password1.errors }}</div>
-        {% endif %}
-      </div>
-      <div class="flex__input">
-        <label for="password2"><h3>Retype Password</h3></label>
-        {{ form.password2 }} {% if form.password2.errors %}
-        <div class="flex__form--error">{{ form.password2.errors }}</div>
-        {% endif %}
-      </div>
-      <div class="flex__input">
-        <label for="birthday"><h3>Birthday</h3></label>
-        {{ form.birthday }} {% if form.birthday.errors %}
-        <div class="flex__form--error">{{ form.birthday.errors }}</div>
-        {% endif %}
-      </div>
-      <div class="flex__input">
-        <label for="gender"><h3>Gender</h3></label>
-        {{ form.gender }} {% if form.gender.errors %}
-        <div class="flex__form--error">{{ form.gender.errors }}</div>
-        {% endif %}
-      </div>
-      <button type="submit" class="flex__button"><h2>Sign Up</h2></button>
-      <p class="flex__registerlink"><a target="blank" href="register.html">Forget Password?</a></p>
-      <p><i class="fa-regular fa-heart"></i> Your privacy and confidentiality are our top priority</p>
-    </form>
+  <div class="container__form">
+    <div class="flex__form">
+      <form method="post" action="{% url 'user_auth:sign_up' %}">
+        {% csrf_token %}
+        <h2 class="flex__logintitle">Start Your Journey to a Healthier Mind</h2>
+        <div class="flex__input">
+          <label for="first_name"><h3>First Name</h3></label>
+          {{ form.first_name }} {% if form.first_name.errors %}
+          <div class="flex__form--error">{{ form.first_name.errors }}</div>
+          {% endif %}
+        </div>
+        <div class="flex__input">
+          <label for="last_name"><h3>Last Name</h3></label>
+          {{ form.last_name }} {% if form.last_name.errors %}
+          <div class="flex__form--error">{{ form.last_name.errors }}</div>
+          {% endif %}
+        </div>
+        <div class="flex__input">
+          <label for="email"><h3>Email</h3></label>
+          {{ form.email }} {% if form.email.errors %}
+          <div class="flex__form--error">{{ form.email.errors }}</div>
+          {% endif %}
+        </div>
+        <div class="flex__input">
+          <label for="username"><h3>Username</h3></label>
+          {{ form.username }} {% if form.username.errors %}
+          <div class="flex__form--error">{{ form.username.errors }}</div>
+          {% endif %}
+        </div>
+        <div class="flex__input">
+          <label for="password1"><h3>Password</h3></label>
+          {{ form.password1 }} {% if form.password1.errors %}
+          <div class="flex__form--error">{{ form.password1.errors }}</div>
+          {% endif %}
+        </div>
+        <div class="flex__input">
+          <label for="password2"><h3>Retype Password</h3></label>
+          {{ form.password2 }} {% if form.password2.errors %}
+          <div class="flex__form--error">{{ form.password2.errors }}</div>
+          {% endif %}
+        </div>
+        <div class="flex__input">
+          <label for="birthday"><h3>Birthday</h3></label>
+          {{ form.birthday }} {% if form.birthday.errors %}
+          <div class="flex__form--error">{{ form.birthday.errors }}</div>
+          {% endif %}
+        </div>
+        <div class="flex__input">
+          <label for="gender"><h3>Gender</h3></label>
+          {{ form.gender }} {% if form.gender.errors %}
+          <div class="flex__form--error">{{ form.gender.errors }}</div>
+          {% endif %}
+        </div>
+        <button type="submit" class="flex__button"><h2>Sign Up</h2></button>
+        <p class="flex__registerlink"><a target="blank" href="register.html">Forget Password?</a></p>
+        <p><i class="fa-regular fa-heart"></i> Your privacy and confidentiality are our top priority</p>
+      </form>
+    </div>
   </div>
+  <footer class="footer">
+    <div class="footer__content">
+        <img src="../static/img/logo.png" width="150px" alt="" srcset="">
+       
+        <div class="footer__icons">
+            <i class="fa-brands fa-square-facebook"></i>
+            <i class="fa-brands fa-square-x-twitter"></i>
+            <i class="fa-brands fa-square-instagram"></i>
+        </div>
+    </div>
+    <p>"Your mental health matters. We're here to support your wellness journey.</p>
+    <div class="footer__leagle">© MindEase 2024</div>
+</footer>
 </div>
 {% endblock %}
