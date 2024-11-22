@@ -14,3 +14,7 @@ def user_profile(request):
         age = datetime.now().year - profile.birthday.year
         print(age)
         return render(request, 'profile.html', {'user':user, 'profile':profile, 'age':age})
+    
+
+def home(request):
+    return render(request, 'home.html')
