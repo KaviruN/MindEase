@@ -10,3 +10,19 @@ window.addEventListener('scroll', () => {
     navbar.classList.remove('scrolled');
   }
 });
+
+const navMobile = document.querySelector('.navbar__mobile');
+
+function navClose() {
+    navMobile.style.width = "0";
+    setTimeout(() => {
+        navMobile.style.display = "none";
+    }, 500); // Match the transition duration
+}
+
+function navOpen() {
+    navMobile.style.display = "flex";
+    setTimeout(() => {
+        navMobile.style.width = "100%";
+    }, 10); // Small delay to trigger the transition
+}
