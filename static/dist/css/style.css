@@ -157,6 +157,7 @@ em {
   justify-content: center;
   align-items: center;
   opacity: 1;
+  color: hsl(39, 77%, 83%);
 }
 .footer__content {
   display: flex;
@@ -170,11 +171,14 @@ em {
 .footer__leagle {
   color: hsl(0, 0%, 100%);
   font-weight: 600;
+  color: #f5deb3;
 }
 .footer p {
   color: hsl(0, 0%, 100%);
   text-align: center;
   width: 100%;
+  padding-inline: 2em;
+  color: wheat;
 }
 .footer__icons {
   font-size: 2rem;
@@ -197,6 +201,7 @@ em {
   .footer p {
     text-align: left;
     margin-top: 0;
+    padding: 0;
   }
 }
 
