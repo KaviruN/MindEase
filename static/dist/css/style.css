@@ -102,14 +102,11 @@ em {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  padding: 2rem;
-  margin-top: 3em;
 }
 @media (min-width: 768px) {
   .flex {
     flex-direction: row;
     gap: 2rem;
-    padding: 2rem;
     justify-content: space-evenly;
     align-items: center;
   }
@@ -188,7 +185,7 @@ em {
 @media (min-width: 678px) {
   .footer {
     justify-content: space-between;
-    padding: 0 2em;
+    padding: 2em;
   }
   .footer__content {
     flex-direction: row;
