@@ -1,24 +1,66 @@
-<div class="flex">
-    <div class="flex__container">
-        <h1 class="flex__headtitle">Let's Talk About Your Mental Health</h1>
-        <p class="flex__subtitle">Depression is more common than you might think, and you're not
-            alone. Our caring team of professionals is here to listen and
-            support you through your journey.</p>
-    </div>
-
-    <div class="flex__call flex__support">
-        <i class="fa-solid fa-phone flex__icons"></i>
-        <div class="flex__support-content">
-            <h3>24/7 Support Line</h2>
-            <p>+94-11-233-6585</p>
-        </div>
-    </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My Django App{% endblock %}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;500;600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/4deb7e25f1.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../static/dist/css/style.css">
+    <link rel="icon" href="{% static 'img/a.jpg' %}" type="image/x-icon"/>
     
-    <div class="flex__chat flex__support">
-        <i class="fa-regular fa-comment flex__icons"></i>
-        <div class="flex__support-content">
-            <h3>Chat Support</h3>
-            <p>Available 24/7</p>
+</head>
+<body>
+
+<div class="container" style="min-height: 200vh;">
+    <nav class="navbar" >
+        <img src="../static/img/colorlogo.png" width="150px" class="">
+        <ul class="navbar__list">
+            <li class="navbar__iterms"><a href="">Home</a></li>
+            <li class="navbar__iterms"><a href="">Contact</a></li>
+            <li class="navbar__iterms"><a href="">Service</a></li>
+            <li class="navbar__iterms"><a href="">About</a></li>
+        </ul>
+        <ul class="navbar__list right">
+            <li class="navbar__iterms">
+                <li class="navbar__iterms"><button class="navbar__btn"><a href="">Login</a></button></li>
+                <div class="navbar__dropdown">
+                    <button class="navbar__btn"><a >Register</a></button>
+                    <div class="navbar__dropdown-content">
+                        <a href="{% url 'pages:profile' %}">Profile</a>
+                        <a href="#">Mode Tracker</a>
+                        <a href="#">Chat With Ai</a> 
+                        <a href="{% url 'user_auth:sign_out' %}">Sign Out</a>  
+                    </div>
+                </div>
+            </li>    
+        </ul>
+        <i class="fa-solid fa-bars"></i>
+        <!-- <div class="navbar__mobile">
+            <ul class="navbar__list">
+                <li class="navbar__iterms"><a href="">Home</a></li>
+                <li class="navbar__iterms"><a href="">Contact</a></li>
+                <li class="navbar__iterms"><a href="">Service</a></li>
+                <li class="navbar__iterms"><a href="">About</a></li>
+            </ul>
+        </div> -->
+    </nav>
+    <footer class="footer">
+        <div class="footer__content">
+            <img src="../static/img/colorlogo.png" width="150px" alt="" srcset="">
+           
+            <div class="footer__icons">
+                <i class="fa-brands fa-square-facebook"></i>
+                <i class="fa-brands fa-square-x-twitter"></i>
+                <i class="fa-brands fa-square-instagram"></i>
+            </div>
         </div>
-    </div>
+        <p>Your mental health matters. We're here to support your wellness journey.</p>
+        <div class="footer__leagle">© MindEase 2024</div>
+    </footer>
 </div>
+<script src="../static/js/scripts.js"></script>
+</body>
+</html>
