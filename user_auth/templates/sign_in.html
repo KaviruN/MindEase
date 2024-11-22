@@ -3,67 +3,69 @@
 {% block title %}Sign In{% endblock %}
 
 {% block content %}
+<div class="container__form">
     <div class="flex">
-        <div class="flex__container">
+            <div class="flex__container">
             <h1 class="flex__headtitle">Let's Talk About Your Mental Health</h1>
             <p class="flex__subtitle">Depression is more common than you might think, and you're not
                 alone. Our caring team of professionals is here to listen and
                 support you through your journey.</p>
+
+            <div class="flex__call flex__support">
+                <i class="fa-solid fa-phone flex__icons"></i>
+                <div class="flex__support-content">
+                    <h3>24/7 Support Line</h2>
+                    <p>+94-11-233-6585</p>
+                </div>
+            </div>
+            
+            <div class="flex__chat flex__support">
+                <i class="fa-regular fa-comment flex__icons"></i>
+                <div class="flex__support-content">
+                    <h3>Chat Support</h3>
+                    <p>Available 24/7</p>
+                </div>
+            </div>
         </div>
 
-        <div class="flex__call flex__support">
-            <i class="fa-solid fa-phone flex__icons"></i>
-            <div class="flex__support-content">
-                <h3>24/7 Support Line</h2>
-                <p>+94-11-233-6585</p>
-            </div>
-        </div>
-        
-        <div class="flex__chat flex__support">
-            <i class="fa-regular fa-comment flex__icons"></i>
-            <div class="flex__support-content">
-                <h3>Chat Support</h3>
-                <p>Available 24/7</p>
-            </div>
-        </div>
-    </div>
-    <div class="container__form">
-        <div class="flex__form">
-            <form method="POST" action="{% url 'user_auth:sign_in' %}">{% csrf_token %}
-                <h2 class="flex__logintitle">Welcome Back, Your Wellness Awaits!</h2>
-                
-                {% if form.non_field_errors %}
-                    <div class="flex__form--error">
-                        <p>Invalid username or password</p>
-                    </div>
-                {% endif %}
-                {% if form.username.errors %}
-                    <div class="flex__form--error">
-                            <p>Invalid username</p>
-                    </div>
-                {% endif %}
-                {% if form.password.errors %}
-                    <div class="flex__form--error">
-                            <p>Invalid username</p>
-                    </div>
-                {% endif %}
-                
-                <div class="flex__input">
-                    <label for="username"><h3>Username</h3></label>
-                    <input type="text" id="username" name="username" placeholder="Enter your Username">
-        
+    <div class="flex__form">
+        <form method="POST" action="{% url 'user_auth:sign_in' %}">{% csrf_token %}
+            <h2 class="flex__logintitle">Welcome Back, Your Wellness Awaits!</h2>
+            
+            {% if form.non_field_errors %}
+                <div class="flex__form--error">
+                    <p>Invalid username or password</p>
                 </div>
-                <div class="flex__input">
-                    <label for="password"><h3>Password</h3></label>
-                    <input type="password" id="password" name="password" placeholder="Enter your password" minlength="8">
+            {% endif %}
+            {% if form.username.errors %}
+                <div class="flex__form--error">
+                        <p>Invalid username</p>
                 </div>
-                <button class="flex__button"><h2>Login</h2></button>
-                <p class="flex__registerlink"><a target="blank" href="#">Forgot Password?</a></p>
-                <p class="flex__registerlink">Don't have an account? <a target="blank" href="{% url 'user_auth:sign_up' %}">Sign up</a></p>
-                <p><i class="fa-regular fa-heart"></i> Your privacy and confidentiality are our top priority</p>
-            </form>
-        </div>
+            {% endif %}
+            {% if form.password.errors %}
+                <div class="flex__form--error">
+                        <p>Invalid username</p>
+                </div>
+            {% endif %}
+            
+            <div class="flex__input">
+                <label for="username"><h3>Username</h3></label>
+                <input type="text" id="username" name="username" placeholder="Enter your Username">
+    
+            </div>
+            <div class="flex__input">
+                <label for="password"><h3>Password</h3></label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" minlength="8">
+            </div>
+            <button class="flex__button"><h2>Login</h2></button>
+            <p class="flex__registerlink"><a target="blank" href="#">Forgot Password?</a></p>
+            <p class="flex__registerlink">Don't have an account? <a target="blank" href="{% url 'user_auth:sign_up' %}">Sign up</a></p>
+            <p><i class="fa-regular fa-heart"></i> Your privacy and confidentiality are our top priority</p>
+        </form>
     </div>
+
+    </div>
+</div>
 
 
 
