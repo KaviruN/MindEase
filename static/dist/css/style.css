@@ -331,6 +331,10 @@ em {
   }
 }
 
+body.no-scroll {
+  overflow: hidden;
+}
+
 .flex__icons {
   color: hsl(0, 0%, 100%);
   background: var(--background-gradiant);
