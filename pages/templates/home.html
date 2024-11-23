@@ -3,6 +3,57 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
+<nav class="navbar" >
+    <img src="../static/img/colorlogo.png" width="150px" class="">
+    <ul class="navbar__list">
+        <li class="navbar__iterms"><a href="{% url 'pages:home' %}" class="activate">Home</a></li>
+        <li class="navbar__iterms"><a href="">Contact</a></li>
+        <li class="navbar__iterms"><a href="">Service</a></li>
+        <li class="navbar__iterms"><a href="">About</a></li>
+    </ul>
+    <ul class="navbar__list right">
+        <li class="navbar__iterms">
+            {% if user.is_authenticated %}
+            <div class="navbar__dropdown">
+                <button class="navbar__icon"><a><i class="fa-regular fa-user icon"></i></a></button>
+                <div class="navbar__dropdown-content">
+                    <a href="{% url 'pages:profile' %}">Profile</a>
+                    <a href="#">Mode Tracker</a>
+                    <a href="#">Chat With Ai</a> 
+                    <a href="{% url 'user_auth:sign_out' %}">Sign Out</a>  
+                </div>
+            </div>
+            {% else %}
+                <li class="navbar__iterms"><button class="navbar__btn"><a href="{% url 'user_auth:sign_in' %}">Sign In</a></button></li>
+                <li class="navbar__iterms"><button class="navbar__btn"><a href="{% url 'user_auth:sign_up' %}">Sign Up</a></button></li>
+            {% endif %}
+        </li>    
+    </ul>
+    <i class="fa-solid fa-bars" onclick="navOpen()"></i>
+    <div class="navbar__mobile navbar__show hide">
+        <i class="fa-solid fa-xmark" onclick="navClose()"></i>
+        <ul class="navbar__mobile--list">
+            <li class="navbar__iterms"><a  href="{% url 'pages:home' %}">Home</a></li>
+            <li class="navbar__iterms"><a href="">Contact</a></li>
+            <li class="navbar__iterms"><a href="">Service</a></li>
+            <li class="navbar__iterms"><a href="">About</a></li>
+            {% if not user.is_authenticated %}
+                <li class="navbar__iterms"><a href="{% url 'user_auth:sign_in' %}">Sign In</a></li>
+                <li class="navbar__iterms"><a href="{% url 'user_auth:sign_up' %}">Sign Up</a></li>
+            {% else %}
+            <div class="navbar__dropdown">
+                <button class="navbar__icon"><a><i class="fa-regular fa-user icon"></i></a></button>
+                <div class="navbar__dropdown-content">
+                    <a href="{% url 'pages:profile' %}">Profile</a>
+                    <a href="#">Mode Tracker</a>
+                    <a href="#">Chat With Ai</a> 
+                    <a href="{% url 'user_auth:sign_out' %}">Sign Out</a>  
+                </div>
+                </div>
+            {% endif %}
+        </ul>
+    </div>
+</nav>
 <div class="container__form">
     
    

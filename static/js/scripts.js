@@ -1,11 +1,12 @@
 const navbar = document.querySelector('.navbar');
 
+// Add an event listener for scrolling
 window.addEventListener('scroll', () => {
   if (window.scrollY > 50) {
-
+    // Add the "scrolled" class if scrolled down
     navbar.classList.add('scrolled');
   } else {
-
+    // Remove the "scrolled" class when at the top
     navbar.classList.remove('scrolled');
   }
 });
@@ -17,7 +18,7 @@ function navClose() {
     setTimeout(() => {
         navMobile.style.display = "none";
         document.body.classList.remove('no-scroll');
-    }, 500); 
+    }, 500); // Match the transition duration
 }
 
 function navOpen() {
@@ -25,6 +26,14 @@ function navOpen() {
     document.body.classList.add('no-scroll');
     setTimeout(() => {
         navMobile.style.width = "100%";
-    }, 10); 
-
+    }, 10); // Small delay to trigger the transition
 }
+
+// Simulate hover effect on touch devices
+const dropdowns = document.querySelectorAll('.navbar__dropdown');
+
+dropdowns.forEach(dropdown => {
+  dropdown.addEventListener('touchstart', () => {
+    dropdown.classList.toggle('hover');
+  });
+});

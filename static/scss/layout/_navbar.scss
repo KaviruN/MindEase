@@ -20,12 +20,14 @@
     margin: u.em(10); /* Adds some margin around the navbar */
     width: calc(100% - u.em(20));
     background-color: hsla(0, 0%, 0%, 0.882);
-    box-shadow: 0 4px 8px hsla(0, 0%, 100%, 0.3), 0 6px 20px hsla(0, 0%, 100%, 0.3);
+    box-shadow: 0 4px 8px hsla(0, 0%, 100%, 0.3),
+      0 6px 20px hsla(0, 0%, 100%, 0.3);
     padding: 1em;
   }
 
   & .right {
     width: 30%;
+    margin-left: auto; /* Pushes the .right element to the end */
   }
 
   & a {
@@ -53,6 +55,7 @@
 
   &__dropdown {
     display: inline-block;
+    position: relative;
 
     &:hover .navbar__dropdown-content {
       display: flex;
@@ -67,17 +70,14 @@
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
-    min-width: 5em;
-    right: 0;
     border-radius: 1em;
-    margin-right: 0.75em;
-
-    &:first-child {
-      border-radius: 1em;
-    }
+    left: 50%;
+    transform: translateX(-50%); /* Center the dropdown content */
+    margin-top: 0.5em;
 
     & a {
       padding: 1em;
+      color: hsl(39, 77%, 83%);
 
       &:hover {
         background-color: hsl(0, 3%, 19%);
@@ -126,6 +126,8 @@
       justify-self: center;
       margin-top: 1em;
       transition: 0.3s;
+      padding: 0;
+      text-align: center;
     }
 
     & i {

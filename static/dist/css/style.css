@@ -2,9 +2,9 @@
   --color-background: hsla(0, 0%, 2%, 0.593);
   --color-header-bg: hsl(240, 37%, 20%);
   --color-form-text: hsl(0, 0%, 100%);
-  --color-blue: hsl(221, 83%, 53%);
+  --color-blue: hsl(39, 83%, 77%);
   --color-text: hsl(215, 14%, 34%);
-  --color-purple: hsl(271, 81%, 56%);
+  --color-purple: hsl(39, 80%, 68%);
   --background-gradiant: linear-gradient(14deg, var(--color-blue), var(--color-purple));
 }
 
@@ -228,6 +228,7 @@ em {
 }
 .navbar .right {
   width: 30%;
+  margin-left: auto; /* Pushes the .right element to the end */
 }
 .navbar a {
   text-decoration: none;
@@ -250,6 +251,7 @@ em {
 }
 .navbar__dropdown {
   display: inline-block;
+  position: relative;
 }
 .navbar__dropdown:hover .navbar__dropdown-content {
   display: flex;
@@ -262,16 +264,14 @@ em {
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
-  min-width: 5em;
-  right: 0;
   border-radius: 1em;
-  margin-right: 0.75em;
-}
-.navbar__dropdown-content:first-child {
-  border-radius: 1em;
+  left: 50%;
+  transform: translateX(-50%); /* Center the dropdown content */
+  margin-top: 0.5em;
 }
 .navbar__dropdown-content a {
   padding: 1em;
+  color: hsl(39, 77%, 83%);
 }
 .navbar__dropdown-content a:hover {
   background-color: hsl(0, 3%, 19%);
@@ -315,6 +315,8 @@ em {
   justify-self: center;
   margin-top: 1em;
   transition: 0.3s;
+  padding: 0;
+  text-align: center;
 }
 .navbar__mobile i {
   width: 100%;
@@ -346,7 +348,7 @@ body.no-scroll {
   cursor: pointer;
 }
 .flex__icons:hover {
-  background: linear-gradient(14deg, #1d4ed8, #7e22ce);
+  background: linear-gradient(14deg, hsl(39, 73%, 61%), hsl(39, 74%, 68%));
 }
 
 .flex__support {
@@ -380,7 +382,7 @@ body.no-scroll {
 }
 .flex__button:hover, .flex__button:focus {
   transition: background-color 0.3s;
-  background: linear-gradient(14deg, #1d4ed8, #7e22ce);
+  background: linear-gradient(14deg, hsl(39, 73%, 61%), hsl(39, 74%, 68%));
 }
 
 .flex {
