@@ -17,7 +17,7 @@ function navClose() {
     navMobile.style.width = "0";
     setTimeout(() => {
         navMobile.style.display = "none";
-        document.body.classList.remove('no-scroll');
+        // document.body.classList.remove('no-scroll');
     }, 500); // Match the transition duration
 }
 

@@ -151,19 +151,32 @@
 
     &--list {
       list-style: none;
-      font-size: 3rem;
+      font-size: 2rem;
       justify-self: center;
       margin-top: 1em;
       transition: 0.3s;
       padding: 0;
       text-align: center;
+      width: 100%;
+
+      & a {
+          color: hsl(39, 77%, 83%);
+          text-decoration: none;
+          padding: 1em;
+          display: block;
+          transition: 0.3s;
+
+        &:hover {
+          background-color: hsl(0, 0%, 10%);
+        }
+      }
     }
 
     & i {
-      width: 100%;
       text-align: right;
       font-size: 2rem;
       padding: 1em;
+      align-self: flex-end;
     }
   }
 

@@ -334,18 +334,29 @@ em {
 }
 .navbar__mobile--list {
   list-style: none;
-  font-size: 3rem;
+  font-size: 2rem;
   justify-self: center;
   margin-top: 1em;
   transition: 0.3s;
   padding: 0;
   text-align: center;
+  width: 100%;
+}
+.navbar__mobile--list a {
+  color: hsl(39, 77%, 83%);
+  text-decoration: none;
+  padding: 1em;
+  display: block;
+  transition: 0.3s;
+}
+.navbar__mobile--list a:hover {
+  background-color: hsl(0, 0%, 10%);
 }
 .navbar__mobile i {
-  width: 100%;
   text-align: right;
   font-size: 2rem;
   padding: 1em;
+  align-self: flex-end;
 }
 @media (max-width: 768px) {
   .navbar i {
