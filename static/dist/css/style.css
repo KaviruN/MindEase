@@ -217,6 +217,15 @@ em {
 .navbar img {
   cursor: pointer;
 }
+.navbar .icon {
+  display: block;
+  color: hsl(0, 0%, 0%);
+  margin: 0;
+}
+.navbar .active {
+  border-bottom: 0.1875em solid;
+  font-weight: 900;
+}
 .navbar.scrolled {
   top: 0.625em;
   border-radius: 1.25em; /* Rounded edges after scrolling */
@@ -233,6 +242,13 @@ em {
 .navbar a {
   text-decoration: none;
   color: hsl(39, 77%, 83%);
+}
+.navbar__icon {
+  background-color: hsl(39, 77%, 83%);
+  border: none;
+  border-radius: 50%;
+  padding: 0.75rem;
+  text-align: center;
 }
 .navbar__btn {
   padding: 0.5em 1em;
@@ -267,7 +283,6 @@ em {
   border-radius: 1em;
   left: 50%;
   transform: translateX(-50%); /* Center the dropdown content */
-  margin-top: 0.5em;
 }
 .navbar__dropdown-content a {
   padding: 1em;
@@ -276,9 +291,17 @@ em {
 .navbar__dropdown-content a:hover {
   background-color: hsl(0, 3%, 19%);
 }
+.navbar__dropdown-content a:last-child {
+  border-bottom-left-radius: 1em;
+  border-bottom-right-radius: 1em;
+}
+.navbar__dropdown-content a:first-child {
+  border-top-left-radius: 1em;
+  border-top-right-radius: 1em;
+}
 .navbar__list {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
   padding: 0;
   margin: 0;

@@ -38,7 +38,7 @@
             <li class="navbar__iterms"><a href="">Contact</a></li>
             <li class="navbar__iterms"><a href="">Service</a></li>
             <li class="navbar__iterms"><a href="">About</a></li>
-            {% comment %} {% if not user.is_authenticated %}
+            {% if not user.is_authenticated %}
                 <li class="navbar__iterms"><a href="{% url 'user_auth:sign_in' %}">Sign In</a></li>
                 <li class="navbar__iterms"><a href="{% url 'user_auth:sign_up' %}">Sign Up</a></li>
             {% else %}
@@ -51,7 +51,7 @@
                     <a href="{% url 'user_auth:sign_out' %}">Sign Out</a>  
                 </div>
                 </div>
-            {% endif %} {% endcomment %}
+            {% endif %}
         </ul>
     </div>
 </nav>
@@ -66,7 +66,7 @@
                         <h2 class="flex__profile--subtitle"><strong>Birthday</strong> - {{ profile.birthday }}</h2>
                         <h2 class="flex__profile--subtitle"><strong>Age</strong> - {{ age }}</h2>
                         <h2 class="flex__profile--subtitle"><strong>Gender</strong> - {{ profile.gender }}</h2>
-                        <button type="submit" class="flex__button"><a href="{% url 'user_auth:sign_out' %}" style="color: white;"><h2>Sign Out</h2></a></button>
+                        <button type="button" class="flex__button"><a href="{% url 'user_auth:sign_out' %}" style="color: white;"><h2>Sign Out</h2></a></button>
                         <p><i class="fa-regular fa-heart"></i> Your privacy and confidentiality are our top priority</p>
                     </form>
                 </div>

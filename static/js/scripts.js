@@ -23,7 +23,7 @@ function navClose() {
 
 function navOpen() {
     navMobile.style.display = "flex";
-    document.body.classList.add('no-scroll');
+    // document.body.classList.add('no-scroll');
     setTimeout(() => {
         navMobile.style.width = "100%";
     }, 10); // Small delay to trigger the transition
