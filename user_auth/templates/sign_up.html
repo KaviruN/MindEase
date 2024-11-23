@@ -44,8 +44,7 @@
 </nav>
   <div class="container__form">
     <div class="flex__form">
-      <form method="post" action="{% url 'user_auth:sign_up' %}">
-        {% csrf_token %}
+      <form method="post" action="{% url 'user_auth:sign_up' %}">{% csrf_token %}
         <h2 class="flex__logintitle">Start Your Journey to a Healthier Mind</h2>
         <div class="flex__input">
           <label for="first_name"><h3>First Name</h3></label>

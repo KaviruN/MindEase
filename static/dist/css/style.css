@@ -282,11 +282,13 @@ em {
   z-index: 1;
   border-radius: 1em;
   left: 50%;
-  transform: translateX(-50%); /* Center the dropdown content */
+  transform: translateX(-50%);
+  /* Center the dropdown content */
 }
 .navbar__dropdown-content a {
   padding: 1em;
   color: hsl(39, 77%, 83%);
+  transition: 0.3s;
 }
 .navbar__dropdown-content a:hover {
   background-color: hsl(0, 3%, 19%);
@@ -307,6 +309,13 @@ em {
   margin: 0;
   list-style: none;
   width: 40%;
+}
+.navbar__iterms a {
+  transition: 0.2s ease-in-out;
+}
+.navbar__iterms a:hover {
+  border-bottom: 0.1875em solid;
+  font-weight: 900;
 }
 .navbar i {
   display: none;
@@ -349,7 +358,7 @@ em {
   display: block;
   transition: 0.3s;
 }
-.navbar__mobile--list a:hover {
+.navbar__mobile--list a:hover, .navbar__mobile--list a:focus {
   background-color: hsl(0, 0%, 10%);
 }
 .navbar__mobile i {
@@ -408,7 +417,7 @@ body.no-scroll {
   font-size: 0.75rem;
   width: 90%;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: all 0.5s;
   border: none;
   border: none;
   margin-top: 2em;
@@ -417,6 +426,10 @@ body.no-scroll {
 .flex__button:hover, .flex__button:focus {
   transition: background-color 0.3s;
   background: linear-gradient(14deg, hsl(39, 73%, 61%), hsl(39, 74%, 68%));
+}
+
+button {
+  transition: 0.3s;
 }
 
 .flex {
@@ -510,6 +523,10 @@ body.no-scroll {
   max-width: 600px;
   border-radius: 2.1em;
   width: 100%;
+}
+.flex__form form input[type=date] {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
 }
 .flex__form form h3 {
   color: var(--color-form-text);

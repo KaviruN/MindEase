@@ -7,7 +7,7 @@
         font-size: .75rem;
         width: 90%;
         cursor: pointer;
-        transition: all 0.3s;
+        transition: all 0.5s;
         border: none;
         border: none;
         margin-top: 2em;
@@ -20,4 +20,8 @@
         background: linear-gradient(14deg, hsl(39, 73%, 61%), hsl(39, 74%, 68%));
         // border: 2px solid var(--color-blue);
     }
+}
+
+button{
+    transition: 0.3s;
 }

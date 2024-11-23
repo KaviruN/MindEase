@@ -6,6 +6,7 @@ from django.contrib.auth import login, authenticate, logout
 from .forms import SignUpForm
 from django.http import HttpResponse
 from django.contrib.auth.forms import AuthenticationForm
+from django.views.decorators.csrf import csrf_exempt
 
 def sign_up(request):
     if request.method == 'POST':

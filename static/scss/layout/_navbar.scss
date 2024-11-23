@@ -92,11 +92,13 @@
     z-index: 1;
     border-radius: 1em;
     left: 50%;
-    transform: translateX(-50%); /* Center the dropdown content */
+    transform: translateX(-50%); 
+    /* Center the dropdown content */
 
     & a {
       padding: 1em;
       color: hsl(39, 77%, 83%);
+      transition: 0.3s;
 
       &:hover {
         background-color: hsl(0, 3%, 19%);
@@ -122,6 +124,18 @@
     margin: 0;
     list-style: none;
     width: 40%;
+  }
+
+  &__iterms{
+
+    & a{
+      transition: 0.2s ease-in-out;
+
+      &:hover{
+        border-bottom: u.em(3) solid;
+        font-weight: 900;
+      }
+    }
   }
 
   & i {
@@ -159,6 +173,7 @@
       text-align: center;
       width: 100%;
 
+
       & a {
           color: hsl(39, 77%, 83%);
           text-decoration: none;
@@ -166,7 +181,8 @@
           display: block;
           transition: 0.3s;
 
-        &:hover {
+        &:hover,
+        &:focus {
           background-color: hsl(0, 0%, 10%);
         }
       }

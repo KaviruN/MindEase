@@ -1,65 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>MindEase Login</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;500;600&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/4deb7e25f1.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="dist/css/style.css">
-    <link rel="icon" href="img/a.jpg" type="image/x-icon"/>
+    <title>Heavy Processing</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+
+        .loading-spinner {
+            border: 8px solid #7f8c8d;
+            border-top: 8px solid #3498db;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin-bottom: 20px;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        #loading {
+            text-align: center;
+        }
+
+        #content {
+            display: none;
+            text-align: center;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #3498db;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+    </style>
 </head>
 <body>
-    <div class="container register">
-        <div class="container__form">
-            <div class="flex">
-                    <div class="flex__container">
-                    <h1 class="flex__headtitle">Let's Talk About Your Mental Health</h1>
-                    <p class="flex__subtitle">Depression is more common than you might think, and you're not
-                        alone. Our caring team of professionals is here to listen and
-                        support you through your journey.</p>
-
-                    <div class="flex__call flex__support">
-                        <i class="fa-solid fa-phone flex__icons"></i>
-                        <div class="flex__support-content">
-                            <h3>24/7 Support Line</h2>
-                            <p>+94-11-233-6585</p>
-                        </div>
-                    </div>
-                    
-                    <div class="flex__chat flex__support">
-                        <i class="fa-regular fa-comment flex__icons"></i>
-                        <div class="flex__support-content">
-                            <h3>Chat Support</h3>
-                            <p>Available 24/7</p>
-                        </div>
-                    </div>
-                </div>
-
-            <div class="flex__form">
-                <form>
-                    <h2 class="flex__logintitle">Welcome Back, Your Wellness Awaits!</h2>
-                    <div class="flex__input">
-                        <label for="email"><h3>Email</h3></label>
-                        <input type="email" id="email" name="email" placeholder="Enter your email">
-                    </div>
-                    <div class="flex__input">
-                        <label for="password"><h3>Password</h3></label>
-                        <input type="password" id="password" name="password" placeholder="Enter your password" minlength="8">
-                    </div>
-                    <button class="flex__button"><h2>Login</h2></button>
-                    <p class="flex__registerlink"><a target="blank" href="register.html">Fogot Password?</a></p>
-                    <p class="flex__registerlink">Don't have an account? <a href="register.html">Sing in</a></p>
-                    <p><i class="fa-regular fa-heart"></i> Your privacy and confidentiality are our top priority</p>
-                </form>
-            </div>
-
-            </div>
-        </div>
+    <!-- Loading Spinner -->
+    <div id="loading">
+        <div class="loading-spinner"></div>
+        <p>Processing your request...</p>
     </div>
+
+    <!-- Content Container -->
+    <div id="content"></div>
+
+    <!-- Button to trigger heavy processing -->
+    <button id="processBtn">Start Heavy Processing</button>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const loadingDiv = document.getElementById("loading");
+            const contentDiv = document.getElementById("content");
+            const processBtn = document.getElementById("processBtn");
+
+            // Initially hide the loading spinner
+            loadingDiv.style.display = "none";
+
+            // Add event listener to the button
+            processBtn.addEventListener("click", function () {
+                // Show the loading spinner
+                loadingDiv.style.display = "block";
+                processBtn.style.display = "none"; // Hide the button during processing
+
+                // Fetch data from the server
+                fetch("/pages/heavy-processing/", { headers: { 'x-requested-with': 'XMLHttpRequest' } })
+                    .then((response) => response.json())
+                    .then((data) => {
+                        // Hide the loading spinner
+                        loadingDiv.style.display = "none";
+
+                        // Show the content
+                        contentDiv.style.display = "block";
+                        contentDiv.innerHTML = `<h1>${data.message}</h1>`;
+                    })
+                    .catch((error) => {
+                        console.error("Error:", error);
+                        loadingDiv.innerHTML = "<p>Failed to load data. Please try again.</p>";
+                    });
+            });
+        });
+    </script>
 </body>
 </html>

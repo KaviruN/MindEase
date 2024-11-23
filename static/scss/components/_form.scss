@@ -103,6 +103,11 @@
     border-radius: 2.1em;
     width: 100%;
 
+    & input[type="date"]{
+      -webkit-appearance: textfield;
+      -moz-appearance: textfield;
+    }
+
     & h3 {
       color: var(--color-form-text);
     }
