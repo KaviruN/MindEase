@@ -7,7 +7,7 @@
   <img src="../static/img/colorlogo.png" width="150px" class="">
   <ul class="navbar__list">
       <li class="navbar__iterms"><a href="{% url 'pages:home' %}">Home</a></li>
-      <li class="navbar__iterms"><a href="">Contact</a></li>
+      <li class="navbar__iterms"><a href="{% url 'pages:contact' %}">Contact</a></li>
       <li class="navbar__iterms"><a href="">Service</a></li>
       <li class="navbar__iterms"><a href="">About</a></li>
   </ul>
@@ -33,7 +33,7 @@
       <i class="fa-solid fa-xmark" onclick="navClose()"></i>
       <ul class="navbar__mobile--list">
           <li class="navbar__iterms"><a  href="{% url 'pages:home' %}">Home</a></li>
-          <li class="navbar__iterms"><a href="">Contact</a></li>
+          <li class="navbar__iterms"><a href="{% url 'pages:contact' %}">Contact</a></li>
           <li class="navbar__iterms"><a href="">Service</a></li>
           <li class="navbar__iterms"><a href="">About</a></li>
           {% if not user.is_authenticated %}

@@ -1,3 +1,5 @@
+@use "../util/" as u;
+
 .flex {
   &__registerlink a {
     color: hsl(0, 0%, 100%);
@@ -73,6 +75,20 @@
     // }
   }
 
+  & textarea{
+    width: 90%;
+    padding: 1em;
+    border-radius: 1.1em;
+    // border: 1px solid var(--color-text);
+    margin-bottom: 1em;
+    font-size: 1rem;
+    border: none;
+    outline: 3px solid transparent;
+    box-sizing: border-box;
+    resize: none;
+    height: u.em(150);
+  }
+
   &__form {
     // margin-top: 2em;
     color: var(--color-form-text);
@@ -107,6 +123,8 @@
       -webkit-appearance: textfield;
       -moz-appearance: textfield;
     }
+
+
 
     & h3 {
       color: var(--color-form-text);

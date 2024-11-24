@@ -343,7 +343,7 @@ em {
 }
 .navbar__mobile--list {
   list-style: none;
-  font-size: 2rem;
+  font-size: 1.5rem;
   justify-self: center;
   margin-top: 1em;
   transition: 0.3s;
@@ -499,6 +499,18 @@ button {
 }
 .flex__input input:user-valid {
   outline-color: hsl(130, 91%, 31%);
+}
+.flex textarea {
+  width: 90%;
+  padding: 1em;
+  border-radius: 1.1em;
+  margin-bottom: 1em;
+  font-size: 1rem;
+  border: none;
+  outline: 3px solid transparent;
+  box-sizing: border-box;
+  resize: none;
+  height: 9.375em;
 }
 .flex__form {
   color: var(--color-form-text);

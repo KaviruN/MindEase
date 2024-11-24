@@ -1,13 +1,13 @@
 {% extends 'base.html' %}
 
-{% block title %}Sign In{% endblock %}
+{% block title %}Contact{% endblock %}
 
 {% block content %}
 <nav class="navbar" >
     <img src="../static/img/colorlogo.png" width="150px" class="">
     <ul class="navbar__list">
         <li class="navbar__iterms"><a href="{% url 'pages:home' %}">Home</a></li>
-        <li class="navbar__iterms"><a href="{% url 'pages:contact' %}">Contact</a></li>
+        <li class="navbar__iterms"><a href="{% url 'pages:contact' %}" class="active">Contact</a></li>
         <li class="navbar__iterms"><a href="">Service</a></li>
         <li class="navbar__iterms"><a href="">About</a></li>
     </ul>
@@ -33,10 +33,11 @@
         <i class="fa-solid fa-xmark" onclick="navClose()"></i>
         <ul class="navbar__mobile--list">
             <li class="navbar__iterms"><a  href="{% url 'pages:home' %}">Home</a></li>
-            <li class="navbar__iterms"><a href="{% url 'pages:contact' %}">Contact</a></li>
+            <li class="navbar__iterms"><a href="">Contact</a></li>
             <li class="navbar__iterms"><a href="">Service</a></li>
             <li class="navbar__iterms"><a href="">About</a></li>
             {% if not user.is_authenticated %}
+                <li class="navbar__iterms"><a href="{% url 'user_auth:sign_in' %}">Sign In</a></li>
                 <li class="navbar__iterms"><a href="{% url 'user_auth:sign_up' %}">Sign Up</a></li>
             {% endif %}
         </ul>
@@ -68,37 +69,27 @@
         </div>
 
     <div class="flex__form">
-        <form method="POST" action="{% url 'user_auth:sign_in' %}">{% csrf_token %}
+        <form method="POST">{% csrf_token %}
             <h2 class="flex__logintitle">Welcome Back, Your Wellness Awaits!</h2>
-            
-            {% if form.non_field_errors %}
-                <div class="flex__form--error">
-                    <p>Invalid username or password</p>
-                </div>
-            {% endif %}
-            {% if form.username.errors %}
-                <div class="flex__form--error">
-                        <p>Invalid username</p>
-                </div>
-            {% endif %}
-            {% if form.password.errors %}
-                <div class="flex__form--error">
-                        <p>Invalid username</p>
-                </div>
-            {% endif %}
-            
+               
             <div class="flex__input">
-                <label for="username"><h3>Username</h3></label>
-                <input type="text" id="username" name="username" placeholder="Enter your Username">
+                <label for="name"><h3>Your Name</h3></label>
+                <input type="text" id="name" name="name" minlength="3" placeholder="Enter Your Name" required>
     
             </div>
             <div class="flex__input">
-                <label for="password"><h3>Password</h3></label>
-                <input type="password" id="password" name="password" placeholder="Enter your password" minlength="8">
+                <label for="email"><h3>Email Address</h3></label>
+                <input type="email" id="email" name="email" placeholder="Enter Your Email" required>
             </div>
-            <button class="flex__button"><h2>Login</h2></button>
-            <p class="flex__registerlink"><a target="blank" href="#">Forgot Password?</a></p>
-            <p class="flex__registerlink">Don't have an account? <a href="{% url 'user_auth:sign_up' %}">Sign up</a></p>
+            <div class="flex__input">
+                <label for="phonenumber"><h3>Phone Number</h3></label>
+                <input type="number" id="phonenumber" name="phonenumber" maxlength="10" placeholder="Enter Your Phone Number" required>
+            </div>
+            <div class="flex__input">
+                <label for="meassage"><h3>Your Message</h3></label>
+                <textarea name="meassage" id="meassage" placeholder="Meassage ..." required></textarea>
+            </div>
+            <button class="flex__button"><h2>Send Message<i class="fa-regular fa-paper-plane"></i></h2></button>
             <p><i class="fa-regular fa-heart"></i> Your privacy and confidentiality are our top priority</p>
         </form>
     </div>
