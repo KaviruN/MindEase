@@ -3,57 +3,109 @@
 {% block title %}Sign In{% endblock %}
 
 {% block content %}
-<div class="container">
-    <div class="container__form">
-        <div class="flex__form">
-            <form method="POST" action="{% url 'user_auth:sign_in' %}">{% csrf_token %}
-                <h2 class="flex__logintitle">Welcome Back, Your Wellness Awaits!</h2>
-                
-                {% if form.non_field_errors %}
-                    <div class="flex__form--error">
-                        <p>Invalid username or password</p>
-                    </div>
-                {% endif %}
-                {% if form.username.errors %}
-                    <div class="flex__form--error">
-                            <p>Invalid username</p>
-                    </div>
-                {% endif %}
-                {% if form.password.errors %}
-                    <div class="flex__form--error">
-                            <p>Invalid username</p>
-                    </div>
-                {% endif %}
-                
-                <div class="flex__input">
-                    <label for="username"><h3>Username</h3></label>
-                    <input type="text" id="username" name="username" placeholder="Enter your Username">
-        
+<nav class="navbar" >
+    <img src="../static/img/colorlogo.png" width="150px" class="">
+    <ul class="navbar__list">
+        <li class="navbar__iterms"><a href="{% url 'pages:home' %}">Home</a></li>
+        <li class="navbar__iterms"><a href="{% url 'pages:contact' %}">Contact</a></li>
+        <li class="navbar__iterms"><a href="">Service</a></li>
+        <li class="navbar__iterms"><a href="">About</a></li>
+    </ul>
+    <ul class="navbar__list right">
+        <li class="navbar__iterms">
+            {% if user.is_authenticated %}
+            <div class="navbar__dropdown">
+                <button class="navbar__icon"><a><i class="fa-regular fa-user icon"></i></a></button>
+                <div class="navbar__dropdown-content">
+                    <a href="{% url 'pages:profile' %}">Profile</a>
+                    <a href="#">Mode Tracker</a>
+                    <a href="#">Chat With Ai</a> 
+                    <a href="{% url 'user_auth:sign_out' %}">Sign Out</a>  
                 </div>
-                <div class="flex__input">
-                    <label for="password"><h3>Password</h3></label>
-                    <input type="password" id="password" name="password" placeholder="Enter your password" minlength="8">
-                </div>
-                <button class="flex__button"><h2>Login</h2></button>
-                <p class="flex__registerlink"><a target="blank" href="#">Forgot Password?</a></p>
-                <p class="flex__registerlink">Don't have an account? <a target="blank" href="{% url 'user_auth:sign_up' %}">Sign up</a></p>
-                <p><i class="fa-regular fa-heart"></i> Your privacy and confidentiality are our top priority</p>
-            </form>
-        </div>
+            </div>
+            {% else %}
+                <li><button class="navbar__btn"><a href="{% url 'user_auth:sign_up' %}">Sign Up</a></button></li>
+            {% endif %}
+        </li>    
+    </ul>
+    <i class="fa-solid fa-bars" onclick="navOpen()"></i>
+    <div class="navbar__mobile navbar__show hide">
+        <i class="fa-solid fa-xmark" onclick="navClose()"></i>
+        <ul class="navbar__mobile--list">
+            <li class="navbar__iterms"><a  href="{% url 'pages:home' %}">Home</a></li>
+            <li class="navbar__iterms"><a href="{% url 'pages:contact' %}">Contact</a></li>
+            <li class="navbar__iterms"><a href="">Service</a></li>
+            <li class="navbar__iterms"><a href="">About</a></li>
+            {% if not user.is_authenticated %}
+                <li class="navbar__iterms"><a href="{% url 'user_auth:sign_up' %}">Sign Up</a></li>
+            {% endif %}
+        </ul>
     </div>
-    <footer class="footer">
-        <div class="footer__content">
-            <img src="../static/img/logo.png" width="150px" alt="" srcset="">
-           
-            <div class="footer__icons">
-                <i class="fa-brands fa-square-facebook"></i>
-                <i class="fa-brands fa-square-x-twitter"></i>
-                <i class="fa-brands fa-square-instagram"></i>
+</nav>
+<div class="container__form">
+    <div class="flex">
+            <div class="flex__container">
+            <h1 class="flex__headtitle"></h1>
+            <p class="flex__subtitle">Depression is more common than you might think, and you're not
+                alone. Our caring team of professionals is here to listen and
+                support you through your journey.</p>
+
+            <div class="flex__call flex__support">
+                <i class="fa-solid fa-phone flex__icons"></i>
+                <div class="flex__support-content">
+                    <h3>24/7 Support Line</h2>
+                    <p>+94-11-233-6585</p>
+                </div>
+            </div>
+            
+            <div class="flex__chat flex__support">
+                <i class="fa-regular fa-comment flex__icons"></i>
+                <div class="flex__support-content">
+                    <h3>Chat Support</h3>
+                    <p>Available 24/7</p>
+                </div>
             </div>
         </div>
-        <p>"Your mental health matters. We're here to support your wellness journey.</p>
-        <div class="footer__leagle">© MindEase 2024</div>
-    </footer>
+
+    <div class="flex__form">
+        <form method="POST" action="{% url 'user_auth:sign_in' %}">{% csrf_token %}
+            <h2 class="flex__logintitle">Welcome Back, Your Wellness Awaits!</h2>
+            
+            {% if form.non_field_errors %}
+                <div class="flex__form--error">
+                    <p>Invalid username or password</p>
+                </div>
+            {% endif %}
+            {% if form.username.errors %}
+                <div class="flex__form--error">
+                        <p>Invalid username</p>
+                </div>
+            {% endif %}
+            {% if form.password.errors %}
+                <div class="flex__form--error">
+                        <p>Invalid username</p>
+                </div>
+            {% endif %}
+            
+            <div class="flex__input">
+                <label for="username"><h3>Username</h3></label>
+                <input type="text" id="username" name="username" placeholder="Enter your Username">
+    
+            </div>
+            <div class="flex__input">
+                <label for="password"><h3>Password</h3></label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" minlength="8">
+            </div>
+            <button class="flex__button"><h2>Login</h2></button>
+            <p class="flex__registerlink"><a target="blank" href="#">Forgot Password?</a></p>
+            <p class="flex__registerlink">Don't have an account? <a href="{% url 'user_auth:sign_up' %}">Sign up</a></p>
+            <p><i class="fa-regular fa-heart"></i> Your privacy and confidentiality are our top priority</p>
+        </form>
+    </div>
+
+    </div>
 </div>
+
+
 
 {% endblock %}

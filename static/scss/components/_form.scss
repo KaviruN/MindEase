@@ -1,3 +1,5 @@
+@use "../util/" as u;
+
 .flex {
   &__registerlink a {
     color: hsl(0, 0%, 100%);
@@ -73,6 +75,20 @@
     // }
   }
 
+  & textarea{
+    width: 90%;
+    padding: 1em;
+    border-radius: 1.1em;
+    // border: 1px solid var(--color-text);
+    margin-bottom: 1em;
+    font-size: 1rem;
+    border: none;
+    outline: 3px solid transparent;
+    box-sizing: border-box;
+    resize: none;
+    height: u.em(150);
+  }
+
   &__form {
     // margin-top: 2em;
     color: var(--color-form-text);
@@ -103,12 +119,29 @@
     border-radius: 2.1em;
     width: 100%;
 
+    & input[type=date]{
+      -webkit-appearance: textfield;
+      -moz-appearance: textfield;
+    }
+
+    & input[type=number]{
+      -webkit-appearance: none;
+      -moz-appearance: textfield;
+    }
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+
+      margin: 0;
+}
+
     & h3 {
       color: var(--color-form-text);
     }
 
     & h2 {
-      font-weight: 500;
+      
+      font-weight: 600;
     }
   }
   & .fa-heart {
