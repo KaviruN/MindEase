@@ -1,0 +1,134 @@
+{% extends "base.html" %}
+
+    
+    {% block content %}
+    <nav class="navbar" >
+        <img src="../static/img/colorlogo.png" width="150px" class="">
+        <ul class="navbar__list">
+            <li class="navbar__iterms"><a href="{% url 'pages:home' %}">Home</a></li>
+            <li class="navbar__iterms"><a href="{% url 'pages:contact' %}">Contact</a></li>
+            <li class="navbar__iterms"><a href="">Service</a></li>
+            <li class="navbar__iterms"><a href="">About</a></li>
+        </ul>
+        <ul class="navbar__list right">
+            <li class="navbar__iterms">
+                {% if user.is_authenticated %}
+                <div class="navbar__dropdown">
+                    <button class="navbar__icon"><a><i class="fa-regular fa-user icon"></i></a></button>
+                    <div class="navbar__dropdown-content">
+                        <a href="{% url 'pages:profile' %}">Profile</a>
+                        <a href="modetracker:mode_tracker">Mode Tracker</a>
+                        <a href="#">Chat With Ai</a> 
+                        <a href="{% url 'user_auth:sign_out' %}">Sign Out</a>  
+                    </div>
+                </div>
+                {% else %}
+                    <li><button class="navbar__btn"><a href="{% url 'user_auth:sign_in' %}">Sign In</a></button></li>
+                    <li><button class="navbar__btn"><a href="{% url 'user_auth:sign_up' %}">Sign Up</a></button></li>
+                {% endif %}
+            </li>    
+        </ul>
+        <i class="fa-solid fa-bars" onclick="navOpen()"></i>
+        <div class="navbar__mobile navbar__show hide">
+            <i class="fa-solid fa-xmark" onclick="navClose()"></i>
+            <ul class="navbar__mobile--list">
+                <li class="navbar__iterms"><a  href="{% url 'pages:home' %}">Home</a></li>
+                <li class="navbar__iterms"><a href="{% url 'pages:contact' %}">Contact</a></li>
+                <li class="navbar__iterms"><a href="">Service</a></li>
+                <li class="navbar__iterms"><a href="">About</a></li>
+                {% if not user.is_authenticated %}
+                    <li class="navbar__iterms"><a href="{% url 'user_auth:sign_in' %}">Sign In</a></li>
+                    <li class="navbar__iterms"><a href="{% url 'user_auth:sign_up' %}">Sign Up</a></li>
+                {% else %}
+                <li class="navbar__iterms"><a href="{% url 'modetracker:mode_tracker' %}">Mode Tracker</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+    <div class="modetracker" style="padding: 2em; width: 100%;" >
+        <div class="mode">
+            <form action="" method="POST">{% csrf_token %}
+                <div class="feedback">
+                    <label class="angry">
+                        <input type="radio" value="Angry" name="usermode" {% if  usermode == "Angry"%}checked{% endif %}/>
+                        <div>
+                            <svg class="eye left">
+                                <use xlink:href="#eye">
+                            </svg>
+                            <svg class="eye right">
+                                <use xlink:href="#eye">
+                            </svg>
+                            <svg class="mouth">
+                                <use xlink:href="#mouth">
+                            </svg>
+                        </div>
+                    </label>
+                    <label class="sad">
+                        <input type="radio" value="Sad" name="usermode" {% if  usermode == "Sad"%}checked{% endif %}/>
+                        <div>
+                            <svg class="eye left">
+                                <use xlink:href="#eye">
+                            </svg>
+                            <svg class="eye right">
+                                <use xlink:href="#eye">
+                            </svg>
+                            <svg class="mouth">
+                                <use xlink:href="#mouth">
+                            </svg>
+                        </div>
+                    </label>
+                    <label class="ok">
+                        <input type="radio" value="Ok" name="usermode" {% if  usermode == "Ok"%}checked{% endif %}/>
+                        <div></div>
+                    </label>
+                    <label class="good">
+                        <input type="radio" value="Good" name="usermode" {% if  usermode == "Good"%}checked{% endif %}/>
+                        <div>
+                            <svg class="eye left">
+                                <use xlink:href="#eye">
+                            </svg>
+                            <svg class="eye right">
+                                <use xlink:href="#eye">
+                            </svg>
+                            <svg class="mouth">
+                                <use xlink:href="#mouth">
+                            </svg>
+                        </div>
+                    </label>
+                    <label class="happy">
+                        <input type="radio" value="Happy" name="usermode" {% if  usermode == "Happy"%}checked{% endif %}/>
+                        <div>
+                            <svg class="eye left">
+                                <use xlink:href="#eye">
+                            </svg>
+                            <svg class="eye right">
+                                <use xlink:href="#eye">
+                            </svg>
+                        </div>
+                    </label>
+                </div>
+                        
+                <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+                    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7 4" id="eye">
+                        <path d="M1,1 C1.83333333,2.16666667 2.66666667,2.75 3.5,2.75 C4.33333333,2.75 5.16666667,2.16666667 6,1"></path>
+                    </symbol>
+                    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 7" id="mouth">
+                        <path d="M1,5.5 C3.66666667,2.5 6.33333333,1 9,1 C11.6666667,1 14.3333333,2.5 17,5.5"></path>
+                    </symbol>
+                </svg>
+                <button type="submit" class="flex__button">SUBMIT</button>
+            </form>
+            
+        </div>
+        <p style="color: rgb(9, 191, 9);"> {{ message }} </p>
+        
+        <div class="videos">
+            {% if usermode == "Angry" %}<iframe src="https://www.youtube.com/embed/tV2Ecd7m6Tc?si=kI1eRVcYWX7IbDeE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>{% endif %}
+            {% if usermode == "Sad" %}<iframe src="https://www.youtube.com/embed/BloutcYWbJg?si=A3_7i9U3L-eYO-02" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>{% endif %}
+            {% if  usermode == "Ok" %}<iframe src="https://www.youtube.com/embed/sm0i1Y4g_zA?si=NRKUfcWVbfFofFfB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>{% endif %}
+            {% if  usermode == "Good" %}<iframe src="https://www.youtube.com/embed/B5u-SGDfS_s?si=cYl3TX7-PkyqvXPX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>{% endif %}
+            {% if  usermode == "Happy" %}<iframe src="https://www.youtube.com/embed/JJ9GD0SiwEc?si=sUJ0AJqWWR8KnEhd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>{% endif %}
+        </div>
+
+    </div>
+{% endblock %}
