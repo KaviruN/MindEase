@@ -24,7 +24,8 @@
                 </div>
             </div>
             {% else %}
-                <li class="navbar__iterms"><button class="navbar__btn"><a href="{% url 'user_auth:sign_up' %}">Sign Up</a></button></li>
+                <li class=""><button class="navbar__btn"><a href="{% url 'user_auth:sign_up' %}">Sign Up</a></button></li>
+                <li class=""><button class="navbar__btn"><a href="{% url 'user_auth:sign_in' %}">Sign In</a></button></li>
             {% endif %}
         </li>    
     </ul>
@@ -46,53 +47,54 @@
 <div class="container__form">
     <div class="flex">
             <div class="flex__container">
-            <h1 class="flex__headtitle">Let's Talk About Your Mental Health</h1>
-            <p class="flex__subtitle">Depression is more common than you might think, and you're not
-                alone. Our caring team of professionals is here to listen and
-                support you through your journey.</p>
+                <h1 class="flex__headtitle"></h1>
+                <p class="flex__subtitle">Depression is more common than you might think, and you're not
+                    alone. Our caring team of professionals is here to listen and
+                    support you through your journey.</p>
 
-            <div class="flex__call flex__support">
-                <i class="fa-solid fa-phone flex__icons"></i>
-                <div class="flex__support-content">
-                    <h3>24/7 Support Line</h2>
-                    <p>+94-11-233-6585</p>
+                <div class="flex__call flex__support">
+                    <i class="fa-solid fa-phone flex__icons"></i>
+                    <div class="flex__support-content">
+                        <h3>24/7 Support Line</h2>
+                        <p>+94-11-233-6585</p>
+                    </div>
+                </div>
+                
+                <div class="flex__chat flex__support">
+                    <i class="fa-regular fa-comment flex__icons"></i>
+                    <div class="flex__support-content">
+                        <h3>Chat Support</h3>
+                        <p>Available 24/7</p>
+                    </div>
                 </div>
             </div>
-            
-            <div class="flex__chat flex__support">
-                <i class="fa-regular fa-comment flex__icons"></i>
-                <div class="flex__support-content">
-                    <h3>Chat Support</h3>
-                    <p>Available 24/7</p>
+
+        <div class="flex__form">
+            <form method="POST">{% csrf_token %}
+                <h2 class="flex__logintitle">Feel Free to Get in Touch With Us</h2>
+                
+                <div class="flex__input">
+                    <label for="name"><h3>Your Name</h3></label>
+                    <input type="text" id="name" name="name" minlength="3" placeholder="Enter Your Name" required>
+        
                 </div>
-            </div>
+                <div class="flex__input">
+                    <label for="email"><h3>Email Address</h3></label>
+                    <input type="email" id="email" name="email" placeholder="Enter Your Email" required>
+                </div>
+                <div class="flex__input">
+                    <label for="phonenumber"><h3>Phone Number</h3></label>
+                    <input type="number" id="phonenumber" name="phonenumber" maxlength="10" placeholder="Enter Your Phone Number" required>
+                </div>
+                <div class="flex__input">
+                    <label for="meassage"><h3>Your Message</h3></label>
+                    <textarea name="meassage" id="meassage" placeholder="Meassage ..." required></textarea>
+                </div>
+                <button class="flex__button"><h2>Send Message<i class="fa-regular fa-paper-plane"></i></h2></button>
+                <p style="color: rgb(9, 191, 9);"> {{ result }} </p>
+                <p><i class="fa-regular fa-heart"></i> Your privacy and confidentiality are our top priority</p>
+            </form>
         </div>
-
-    <div class="flex__form">
-        <form method="POST">{% csrf_token %}
-            <h2 class="flex__logintitle">Welcome Back, Your Wellness Awaits!</h2>
-               
-            <div class="flex__input">
-                <label for="name"><h3>Your Name</h3></label>
-                <input type="text" id="name" name="name" minlength="3" placeholder="Enter Your Name" required>
-    
-            </div>
-            <div class="flex__input">
-                <label for="email"><h3>Email Address</h3></label>
-                <input type="email" id="email" name="email" placeholder="Enter Your Email" required>
-            </div>
-            <div class="flex__input">
-                <label for="phonenumber"><h3>Phone Number</h3></label>
-                <input type="number" id="phonenumber" name="phonenumber" maxlength="10" placeholder="Enter Your Phone Number" required>
-            </div>
-            <div class="flex__input">
-                <label for="meassage"><h3>Your Message</h3></label>
-                <textarea name="meassage" id="meassage" placeholder="Meassage ..." required></textarea>
-            </div>
-            <button class="flex__button"><h2>Send Message<i class="fa-regular fa-paper-plane"></i></h2></button>
-            <p><i class="fa-regular fa-heart"></i> Your privacy and confidentiality are our top priority</p>
-        </form>
-    </div>
 
     </div>
 </div>

@@ -15,7 +15,7 @@
       <li class="navbar__iterms">
           {% if user.is_authenticated %}
           <div class="navbar__dropdown">
-              <button class="navbar__icon"><a><i class="fa-regular fa-user icon"></i></a></button>
+              <button><a><i class="fa-regular fa-user icon"></i></a></button>
               <div class="navbar__dropdown-content">
                   <a href="{% url 'pages:profile' %}">Profile</a>
                   <a href="#">Mode Tracker</a>
@@ -24,7 +24,7 @@
               </div>
           </div>
           {% else %}
-              <li class="navbar__iterms"><button class="navbar__btn"><a href="{% url 'user_auth:sign_in' %}">Sign In</a></button></li>
+              <li><button class="navbar__btn"><a href="{% url 'user_auth:sign_in' %}">Sign In</a></button></li>
           {% endif %}
       </li>    
   </ul>

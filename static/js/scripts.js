@@ -37,3 +37,18 @@ dropdowns.forEach(dropdown => {
     dropdown.classList.toggle('hover');
   });
 });
+
+
+let i = 0;
+const txt = 'Let\'s Talk About Your Mental Health';
+const speed = 70;
+
+function typeWriter() {
+  if (i < txt.length) {
+    document.querySelector('.flex__headtitle').innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+}
+
+addEventListener('load', typeWriter);

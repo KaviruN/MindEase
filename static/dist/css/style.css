@@ -315,7 +315,7 @@ em {
 }
 .navbar__iterms a:hover {
   border-bottom: 0.1875em solid;
-  font-weight: 900;
+  font-weight: 600;
 }
 .navbar i {
   display: none;
@@ -412,9 +412,9 @@ body.no-scroll {
 .flex__button {
   background: var(--background-gradiant);
   color: hsl(0, 0%, 100%);
-  padding: 0.75em;
+  padding: 0.5em;
   border-radius: 1.1em;
-  font-size: 0.75rem;
+  font-size: 1rem;
   width: 90%;
   cursor: pointer;
   transition: all 0.5s;
@@ -544,7 +544,7 @@ button {
   color: var(--color-form-text);
 }
 .flex__form form h2 {
-  font-weight: 500;
+  font-weight: 600;
 }
 .flex .fa-heart {
   color: red;

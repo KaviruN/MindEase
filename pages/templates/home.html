@@ -24,8 +24,8 @@
                 </div>
             </div>
             {% else %}
-                <li class="navbar__iterms"><button class="navbar__btn"><a href="{% url 'user_auth:sign_in' %}">Sign In</a></button></li>
-                <li class="navbar__iterms"><button class="navbar__btn"><a href="{% url 'user_auth:sign_up' %}">Sign Up</a></button></li>
+                <li><button class="navbar__btn"><a href="{% url 'user_auth:sign_in' %}">Sign In</a></button></li>
+                <li><button class="navbar__btn"><a href="{% url 'user_auth:sign_up' %}">Sign Up</a></button></li>
             {% endif %}
         </li>    
     </ul>
