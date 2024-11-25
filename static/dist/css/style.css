@@ -224,7 +224,7 @@ em {
 }
 .navbar .active {
   border-bottom: 0.1875em solid;
-  font-weight: 900;
+  font-weight: 600;
 }
 .navbar.scrolled {
   top: 0.625em;
@@ -539,6 +539,14 @@ button {
 .flex__form form input[type=date] {
   -webkit-appearance: textfield;
   -moz-appearance: textfield;
+}
+.flex__form form input[type=number] {
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+}
+.flex__form form input::-webkit-outer-spin-button,
+.flex__form form input::-webkit-inner-spin-button {
+  margin: 0;
 }
 .flex__form form h3 {
   color: var(--color-form-text);

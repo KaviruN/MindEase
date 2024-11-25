@@ -119,12 +119,21 @@
     border-radius: 2.1em;
     width: 100%;
 
-    & input[type="date"]{
+    & input[type=date]{
       -webkit-appearance: textfield;
       -moz-appearance: textfield;
     }
 
+    & input[type=number]{
+      -webkit-appearance: none;
+      -moz-appearance: textfield;
+    }
 
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+
+      margin: 0;
+}
 
     & h3 {
       color: var(--color-form-text);
