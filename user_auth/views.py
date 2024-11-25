@@ -49,9 +49,8 @@ def verify_code_view(request):
             user_id = request.session.get('user_id')
             user = User.objects.get(id=user_id)
             user.is_active = True
-            user.save()
-            login(request, user)  # Log the user in after verification
-            return HttpResponse('Email verified successfully!')
+            user.save() # Log the user in after verification
+            return redirect('user_auth:sign_in')
         else:
             return HttpResponse('Invalid verification code.')
     return render(request, '2.html')

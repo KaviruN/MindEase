@@ -48,6 +48,7 @@ INSTALLED_APPS = [
 
     'user_auth',
     'pages',
+    'modetracker',
 ]
 
 MIDDLEWARE = [

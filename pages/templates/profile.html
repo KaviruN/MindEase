@@ -19,7 +19,7 @@
                 <button class="navbar__icon"><a><i class="fa-regular fa-user icon"></i></a></button>
                 <div class="navbar__dropdown-content">
                     <a href="{% url 'pages:profile' %}">Profile</a>
-                    <a href="#">Mode Tracker</a>
+                    <a href="{% url 'modetracker:mode_tracker' %}">Mode Tracker</a>
                     <a href="#">Chat With Ai</a> 
                     <a href="{% url 'user_auth:sign_out' %}">Sign Out</a>  
                 </div>
@@ -42,7 +42,8 @@
                 <li class="navbar__iterms"><a href="{% url 'user_auth:sign_in' %}">Sign In</a></li>
                 <li class="navbar__iterms"><a href="{% url 'user_auth:sign_up' %}">Sign Up</a></li>
             {% else %}
-                
+                <li class="navbar__iterms"><a href="{% url 'modetracker:mode_tracker' %}">Mode Tracker</a></li>
+                <li class="navbar__iterms"><a href="{% url 'user_auth:sign_out' %}">Sign Out</a></li>
             {% endif %}
         </ul>
     </div>
