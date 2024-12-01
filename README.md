@@ -50,4 +50,4 @@ Contributions are welcome! If you have any ideas or improvements, please open an
 
 ## License
 
-This project is licensed under the MIT License.
+This project is licensed under the MIT License.All rights reserved.
