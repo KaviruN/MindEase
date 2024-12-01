@@ -1,8 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from openai import OpenAI
 from dotenv import load_dotenv
 from django.conf import settings
 import os
+from .models import *
 
 load_dotenv()
 
@@ -45,15 +46,14 @@ def get_response(prompt):
     
 
 def chat(request):
-    prompts = []
-    responses = []
+    user_data = get_object_or_404(UserData, user=request.user)
+    chat_data = user_data.user_data.all()[:20]
     if request.method == 'POST':
         prompt = request.POST.get('prompt')
         response = get_response(prompt)
-        prompts.append(prompt)
-        responses.append(response)
-        return render(request, 'chat.html', {'responses': responses, 'prompts': prompts})
+        ChatData.objects.create(user_chat=user_data, prompt=prompt, response=response)
+       
     
-    return render(request, 'chat.html')
+    return render(request, 'chat.html', {'chat_data': chat_data})
 
 

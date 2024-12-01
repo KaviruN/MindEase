@@ -51,15 +51,14 @@
 
         <div class="flex__form">
             <div class="ds">
-                {% for prompt in prompts %}
-                    <div class="chat__response">
-                        <p style="color: red;">{{ prompt }}</p>
+                {% for data in chat_data %}
+                    <div class="chat__promt">
+                        <p style="color: rgb(74, 231, 12);">{{ data.prompt }}</p>
                     </div>
-                {% endfor %}
-                {% for response in responses %}
-                        <div class="chat__response">
-                            <p>{{ response }}</p>
-                        </div>
+                    <div class="chat__response">
+                        <p style="color: red;">{{ data.response }}</p>
+                    </div>
+
                 {% endfor %}
             </div>
             <form method="POST">{% csrf_token %}
