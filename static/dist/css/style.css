@@ -1,5 +1,5 @@
 :root {
-  --color-background: hsla(0, 0%, 2%, 0.593);
+  --color-background: hsla(0, 0%, 2%, 0.786);
   --color-header-bg: hsl(240, 37%, 20%);
   --color-form-text: hsl(0, 0%, 100%);
   --color-blue: hsl(39, 83%, 77%);
@@ -594,4 +594,45 @@ button {
   width: 100%;
   text-align: left;
   margin-bottom: 1.5em;
+}
+
+.flex__chat {
+  overflow-y: auto;
+  max-height: 400px;
+  scrollbar-width: thin;
+  scrollbar-color: hsla(0, 1%, 25%, 0.616) transparent;
+  /* For WebKit browsers */
+}
+.flex__chat::-webkit-scrollbar {
+  width: 8px;
+}
+.flex__chat::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 10px;
+  border: 2px solid transparent;
+}
+.flex__chat::-webkit-scrollbar-thumb {
+  background-color: hsla(0, 1%, 25%, 0.616);
+  border-radius: 10px;
+  border: 2px solid transparent;
+}
+.flex__chat::-webkit-scrollbar-thumb:hover {
+  background-color: hsla(0, 1%, 25%, 0.8);
+}
+.flex__chat--promt {
+  text-align: right;
+}
+.flex__chat--promt p {
+  background-color: hsla(0, 1%, 30%, 0.708);
+  display: inline-block;
+  padding: 0.5em 0.75em;
+  border-radius: 1.1em;
+}
+.flex__chat--response {
+  text-align: left;
+}
+.flex__chat--response p {
+  display: inline-block;
+  padding: 0.5em 0.75em;
+  border-radius: 1.1em;
 }/*# sourceMappingURL=style.css.map */

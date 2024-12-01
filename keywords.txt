@@ -10,7 +10,7 @@
     "Mental resilience", "Therapy tools", "Cognitive therapy", "Psychologist", "Psychiatrist", 
     "Anger management", "Stress relief", "Depression symptoms", "Life challenges", 
     "Postpartum depression", "Emotions", "Sadness", "Happiness", "Loneliness", "Fear", "Guilt", 
-    "Shame", "Joy", "Anger", "Frustration", "Regret", "Hope", "Grief", "Love", "Confidence", 
+    "Shame", "Joy", "Anger", "Frustration", "range","Regret", "Hope", "Grief", "Love", "Confidence", 
     "Embarrassment", "Jealousy", "Sympathy", "Euphoria", "Overwhelm", "Doubt", "Excitement", 
     "Envy", "Appreciation", "Calmness", "Relief", "Sorrow", "Gratitude", "Fearfulness", 
     "Insecurity", "Pride", "Compassion", "Affection", "Trust", "Distress", "Despair", "Inspiration", 

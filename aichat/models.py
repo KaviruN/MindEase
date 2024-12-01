@@ -10,8 +10,8 @@ class UserData(models.Model):
 
 class ChatData(models.Model):
     user_chat = models.ForeignKey(UserData, related_name='user_data',on_delete=models.CASCADE)
-    prompt = models.CharField(max_length=125)
-    response = models.TextField(max_length=10000)
+    prompt = models.CharField(max_length=125, null=True, default='')
+    response = models.TextField(max_length=10000, null=True,default='')
     created = models.DateField(auto_now=True)
 
     def __str__(self):

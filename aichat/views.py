@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 from django.conf import settings
 import os
 from .models import *
-# from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required
 
 load_dotenv()
 
@@ -48,6 +48,7 @@ def get_response(prompt):
     
 # @login_required
 def chat(request):
+    UserData.objects.get_or_create(user=request.user)
     user_data = get_object_or_404(UserData, user=request.user)
     chat_data = user_data.user_data.all()[:10]
     if request.method == 'POST':
