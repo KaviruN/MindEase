@@ -4,6 +4,7 @@ from dotenv import load_dotenv
 from django.conf import settings
 import os
 from .models import *
+from django.contrib.auth.decorators import login_required
 
 load_dotenv()
 
@@ -12,6 +13,7 @@ def filter_prompt(prompt):
     with open(keywords_path, 'r') as file:
         excluded_keywords = file.read()
     prompt = prompt.lower().split()
+    file.close()
     for keyword in excluded_keywords:
         if keyword in prompt:   
           return True
@@ -44,16 +46,15 @@ def get_response(prompt):
     elif not filter_prompt(prompt):
       return "Sorry, I can't help with that."
     
-
+# @login_required
 def chat(request):
+    UserData.objects.get_or_create(user=request.user)
     user_data = get_object_or_404(UserData, user=request.user)
-    chat_data = user_data.user_data.all()[:20]
+    chat_data = user_data.user_data.all()[:10]
     if request.method == 'POST':
         prompt = request.POST.get('prompt')
         response = get_response(prompt)
         ChatData.objects.create(user_chat=user_data, prompt=prompt, response=response)
-       
-    
     return render(request, 'chat.html', {'chat_data': chat_data})
 
 
