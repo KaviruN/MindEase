@@ -28,7 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-CSRF_TRUSTED_ORIGINS = ["https://53e3-43-250-242-102.ngrok-free.app"]
+CSRF_TRUSTED_ORIGINS = ["https://9267-152-42-184-246.ngrok-free.app"]
 # Application definition
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'user_auth',
     'pages',
     'modetracker',
+    'aichat',
 ]
 
 MIDDLEWARE = [
