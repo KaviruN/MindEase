@@ -18,4 +18,4 @@ class ChatData(models.Model):
         return str(self.created)
     
     class Meta:
-        ordering = ['-created']
+        ordering = ['created']

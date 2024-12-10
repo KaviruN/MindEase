@@ -50,7 +50,7 @@ def get_response(prompt):
 def chat(request):
     UserData.objects.get_or_create(user=request.user)
     user_data = get_object_or_404(UserData, user=request.user)
-    chat_data = user_data.user_data.all()[:10]
+    chat_data = user_data.user_data.order_by('created')[:10]
     if request.method == 'POST':
         prompt = request.POST.get('prompt')
         response = get_response(prompt)

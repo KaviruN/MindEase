@@ -23,12 +23,12 @@
         <img src="../static/img/colorlogo.png" width="150px" class="">
         <ul class="navbar__list">
             <li class="navbar__iterms"><a href="{% url 'pages:home' %}">Home</a></li>
-            <li class="navbar__iterms"><a href="{% url 'pages:contact' %}" class="active">Contact</a></li>
+            <li class="navbar__iterms"><a href="{% url 'pages:contact' %}">Contact</a></li>
             <li class="navbar__iterms"><a href="">Service</a></li>
             <li class="navbar__iterms"><a href="">About</a></li>
         </ul>
         <ul class="navbar__list right">
-            <li class="navbar__iterms">
+            <li class="">
                 {% if user.is_authenticated %}
                 <div class="navbar__dropdown">
                     <button class="navbar__icon"><a><i class="fa-regular fa-user icon"></i></a></button>

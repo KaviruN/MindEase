@@ -1,10 +1,12 @@
 .flex {
     &__chat{
+        display: flex;
         overflow-y: auto;
         max-height: 400px;
         scrollbar-width: thin;
         scrollbar-color: hsla(0, 1%, 25%, 0.616) transparent;
         margin-bottom: 1em;
+        flex-direction: column-reverse;
 
         /* For WebKit browsers */
         &::-webkit-scrollbar {
