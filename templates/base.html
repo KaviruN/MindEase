@@ -20,7 +20,7 @@
 
 <div class="container">
     <nav class="navbar" >
-        <img src="../static/img/colorlogo.png" width="150px" class="">
+        <img src="{% static 'img/colorlogo.png' %}" width="150px" class="">
         <ul class="navbar__list">
             <li class="navbar__iterms"><a href="{% url 'pages:home' %}">Home</a></li>
             <li class="navbar__iterms"><a href="{% url 'pages:contact' %}">Contact</a></li>
@@ -55,21 +55,21 @@
         <div class="navbar__mobile navbar__show hide">
             <i class="fa-solid fa-xmark" onclick="navClose()"></i>
             <ul class="navbar__mobile--list">
-                <li class="navbar__iterms"><a  href="{% url 'pages:home' %}">Home</a></li>
-                <li class="navbar__iterms"><a href="">Contact</a></li>
-                <li class="navbar__iterms"><a href="">Service</a></li>
-                <li class="navbar__iterms"><a href="">About</a></li>
+                <li class=""><a  href="{% url 'pages:home' %}">Home</a></li>
+                <li class=""><a href="">Contact</a></li>
+                <li class=""><a href="">Service</a></li>
+                <li class=""><a href="">About</a></li>
                 {% if not user.is_authenticated %}
                     {% if request.resolver_match.url_name == 'sign_up' %}
-                        <li class="navbar__iterms"><a href="{% url 'user_auth:sign_in' %}">Sign In</a></li>
+                        <li class=""><a href="{% url 'user_auth:sign_in' %}">Sign In</a></li>
                     {% elif request.resolver_match.url_name == 'sign_in' %}
-                        <li class="navbar__iterms"><a href="{% url 'user_auth:sign_up' %}">Sign Up</a></li>
+                        <li class=""><a href="{% url 'user_auth:sign_up' %}">Sign Up</a></li>
                     {% else %}
-                        <li class="navbar__iterms"><a href="{% url 'user_auth:sign_in' %}">Sign In</a></li>
-                        <li class="navbar__iterms"><a href="{% url 'user_auth:sign_up' %}">Sign Up</a></li>
+                        <li class=""><a href="{% url 'user_auth:sign_in' %}">Sign In</a></li>
+                        <li class=""><a href="{% url 'user_auth:sign_up' %}">Sign Up</a></li>
                     {% endif %}
                 {% else %}
-                    <li class="navbar__iterms"><a href="{% url 'modetracker:mode_tracker' %}">Mode Tracker</a></li>
+                    <li class=""><a href="{% url 'modetracker:mode_tracker' %}">Mode Tracker</a></li>
                 {% endif %}
             </ul>
         </div>

@@ -3,7 +3,9 @@
     
     {% block content %}
     <div class="modetracker" style="padding: 2em; width: 100%;" >
+        <h1 style="margin-bottom: 2em;text-align: center;">How are you feeling today? - <span style="color: white;">{{ today }}</span></h1>
         <div class="mode">
+            
             <form action="" method="POST">{% csrf_token %}
                 <div class="feedback">
                     <label class="angry">

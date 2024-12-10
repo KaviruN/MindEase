@@ -46,7 +46,7 @@ def get_response(prompt):
     elif not filter_prompt(prompt):
       return "Sorry, I can't help with that."
     
-# @login_required
+@login_required
 def chat(request):
     UserData.objects.get_or_create(user=request.user)
     user_data = get_object_or_404(UserData, user=request.user)

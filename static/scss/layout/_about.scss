@@ -1,0 +1,42 @@
+.about{
+    display: flex;
+    flex-direction: column;
+    padding: 2em;
+    justify-content: space-around;
+    
+
+
+
+    &__header{
+        display: grid;
+        justify-content: space-around;
+        text-align: center;
+        
+
+        &--content{
+            color: hsl(0, 0%, 100%);
+        }
+    }
+
+}
+
+@media (min-width: 768px){
+    .about{
+        flex-direction: row;
+
+        &__img{
+            width: 50%;
+            
+        }
+
+        &__header{
+            width: 50%;
+            background-color: var(--color-background);
+            padding: 2em;
+            border-radius: 1.1em;
+            box-shadow: 0px 8px 16px 0px rgba(255, 255, 255, 0.2);
+            line-height: .75em;
+        }
+    }
+    
+}
