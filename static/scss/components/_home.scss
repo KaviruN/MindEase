@@ -1,0 +1,15 @@
+.home {
+  &__main {
+    background-image: url("https://images.unsplash.com/photo-1440964829947-ca3277bd37f8?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&dl=nick-scheerbart-xFjAftU8lMY-unsplash.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 90vh;
+    border-radius: 1.1em;
+    border: 3px solid hsl(0, 1%, 63%);
+
+    &--content{
+        
+    }
+  }
+}

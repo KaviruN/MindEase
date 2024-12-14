@@ -3,8 +3,8 @@
   --color-header-bg: hsl(240, 37%, 20%);
   --color-form-text: hsl(0, 0%, 100%);
   --color-blue: hsl(39, 83%, 77%);
-  --color-text: hsl(215, 14%, 34%);
-  --color-purple: hsl(39, 80%, 68%);
+  --color-text: hsl(0, 0%, 100%);
+  --color-purple: #efc16c;
   --background-gradiant: linear-gradient(14deg, var(--color-blue), var(--color-purple));
 }
 
@@ -696,4 +696,14 @@ button {
 .flex__chat--button:hover {
   transform: scale3d(1.1, 1.1, 1.1);
   background: linear-gradient(14deg, hsl(39, 73%, 61%), hsl(39, 74%, 68%));
+}
+
+.home__main {
+  background-image: url("https://images.unsplash.com/photo-1440964829947-ca3277bd37f8?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&dl=nick-scheerbart-xFjAftU8lMY-unsplash.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 90vh;
+  border-radius: 1.1em;
+  border: 3px solid hsl(0, 1%, 63%);
 }/*# sourceMappingURL=style.css.map */
