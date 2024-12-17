@@ -9,6 +9,7 @@
   background-color: hsla(0, 0%, 0%, 0.745);
   padding: 1em 0.5em;
   transition: all 0.5s ease-in-out;
+  z-index: 11111;
 
   & img {
     cursor: pointer;
@@ -55,21 +56,25 @@
   }
 
   &__btn {
+    background: linear-gradient(14deg, hsl(39, 83%, 77%), hsl(39, 80%, 68%));
+    color: hsl(0, 0%, 100%);
     padding: 0.5em 1em;
-    background-color: hsl(39, 77%, 83%);
-    border: none;
-    font-size: 1rem;
     border-radius: 1.1em;
+    text-transform: uppercase;
+    transition: all 0.3s;
+    border: none;
     cursor: pointer;
 
-    & a {
-      color: hsl(0, 0%, 0%);
-      font-weight: 550;
+    &:hover{
+      background: linear-gradient(14deg, hsl(39, 70%, 71%), hsl(39, 83%, 57%));;
     }
 
-    &:hover {
-      background-color: hsl(39, 77%, 73%);
+    & a {
+      color: hsl(0, 0%, 100%);
+      font-size: 1.1rem;
+      font-weight: 700;
     }
+
   }
 
   &__dropdown {
@@ -131,7 +136,6 @@
 
       &:hover {
         border-bottom: u.em(3) solid;
-        font-weight: 600;
       }
     }
   }

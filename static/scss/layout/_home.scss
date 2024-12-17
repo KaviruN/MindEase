@@ -1,6 +1,11 @@
 .home {
   &__main {
     background-image: url("../../img/home_hero.1.jpg");
+    background-image: linear-gradient(
+      315deg,
+      hsl(244, 61%, 15%) 0%,
+      hsl(0, 0%, 0%) 74%
+    );
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
