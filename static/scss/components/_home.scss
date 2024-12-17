@@ -1,15 +1,52 @@
 .home {
   &__main {
-    background-image: url("https://images.unsplash.com/photo-1440964829947-ca3277bd37f8?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&dl=nick-scheerbart-xFjAftU8lMY-unsplash.jpg");
+    background-image: url("../../img/home_hero.1.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     min-height: 90vh;
     border-radius: 1.1em;
-    border: 3px solid hsl(0, 1%, 63%);
+    outline: 3px solid hsl(0, 1%, 63%);
+    justify-items: center;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+    align-items: center;
+    justify-content: center;
+
+    @media (max-width: 768px) {
+      min-height: 50vh;
+    }
 
     &--content{
-        
+      text-align: center;
+
+      @media (min-width: 768px) {
+        width: 50%;
+      }
     }
+
+    &--subtitle{
+      color: hsl(0deg 0% 100% / 44%);
+    }
+
+    &--btn{
+      background: linear-gradient(14deg, hsl(39, 83%, 77%), hsl(39, 80%, 68%));
+      color: hsl(0, 0%, 100%);
+      padding: 0.5em 1em;
+      border-radius: 1.1em;
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-top: 1em;
+      transition: all 0.3s;
+      border: none;
+      cursor: pointer;
+
+      &:hover{
+        background: linear-gradient(14deg, hsl(39, 70%, 71%), hsl(39, 83%, 57%));;
+      }
+    }
+ 
   }
+
 }

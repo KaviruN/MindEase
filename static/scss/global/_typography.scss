@@ -9,7 +9,7 @@ h4 {
 }
 
 h1 {
-  @include u.fs-fluid(u.rem(375), u.rem(1200), u.rem(36), u.rem(50));
+  @include u.fs-fluid(u.rem(375), u.rem(1200), u.rem(40), u.rem(50));
   background-color: var(--color-blue);
   background-image: var(--background-gradiant);
   background-size: 100%;
