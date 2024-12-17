@@ -1,14 +1,15 @@
 .home {
   &__main {
-    background-image: url("../../img/home_hero.1.jpg");
-    background-image: linear-gradient(
-      315deg,
-      hsl(244, 61%, 15%) 0%,
-      hsl(0, 0%, 0%) 74%
-    );
-    background-size: cover;
+    // background-image: url("../../img/home_hero.1.jpg");
+    // background-image: linear-gradient(
+    //   315deg,
+    //   hsl(244, 61%, 15%) 0%,
+    //   hsl(0, 0%, 0%) 74%
+    // );
+    background: linear-gradient(-45deg, hsl(244, 61%, 15%) 0%, hsl(0, 0%, 0%) 25%, hsl(39, 70%, 71%) 50%, hsl(0, 0%, 0%) 75%, hsl(39, 84%, 68%) 100%);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
     background-repeat: no-repeat;
-    background-position: center;
     min-height: 90vh;
     border-radius: 1.1em;
     outline: 3px solid hsl(0, 1%, 63%);
@@ -17,24 +18,28 @@
     box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
     align-items: center;
     justify-content: center;
+    
 
     @media (max-width: 768px) {
       min-height: 50vh;
     }
 
-    &--content{
+    &--content {
+      display: grid;
       text-align: center;
+      padding: 2em;
+      justify-items: center;
 
       @media (min-width: 768px) {
         width: 50%;
       }
     }
 
-    &--subtitle{
+    &--subtitle {
       color: hsl(0deg 0% 100% / 44%);
     }
 
-    &--btn{
+    &--btn {
       background: linear-gradient(14deg, hsl(39, 83%, 77%), hsl(39, 80%, 68%));
       color: hsl(0, 0%, 100%);
       padding: 0.5em 1em;
@@ -46,12 +51,27 @@
       transition: all 0.3s;
       border: none;
       cursor: pointer;
+      width: fit-content;
 
-      &:hover{
-        background: linear-gradient(14deg, hsl(39, 70%, 71%), hsl(39, 83%, 57%));;
+      &:hover {
+        background: linear-gradient(
+          14deg,
+          hsl(39, 70%, 71%),
+          hsl(39, 83%, 57%)
+        );
       }
     }
- 
   }
+}
 
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
