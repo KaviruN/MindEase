@@ -10,8 +10,9 @@
 
         <div class="flex__form">
 
-            <form method="POST">{% csrf_token %}
+            <form method="POST" id="chat_form">{% csrf_token %}
                 <div class="flex__chat">
+                    <div id="loading" style="display: block;">Loading...</div> <!-- Loading message -->
                     <!-- {% for data in chat_data %}
                     <div class="flex__chat--response">
                         <p>{{ data.response }}</p>
@@ -33,6 +34,7 @@
     </div>
 </div>
 <script src="{% static 'js/get_chat_data.js' %}"></script>
+<script src="{% static 'js/chat_data.js' %}"></script>
 
 
 {% endblock %}

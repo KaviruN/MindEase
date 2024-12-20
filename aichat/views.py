@@ -62,8 +62,25 @@ def get_response(prompt):
 
 
 def chat_view(request):
-   return render(request, 'chat.html')
+    if not request.user.is_authenticated:
+        return redirect('user_auth:sign_in')
+    UserData.objects.get_or_create(user=request.user)
+    user_data = get_object_or_404(UserData, user=request.user)
+    if request.method == 'POST':
+        prompt = request.POST.get('prompt')
+        response = get_response(prompt)
+        ChatData.objects.create(user_chat=user_data, prompt=prompt, response=response)   
+    return render(request, 'chat.html')
 
+# def sent_promt(request):
+#     if not request.user.is_authenticated:
+#         return redirect('user_auth:sign_in')
+#     UserData.objects.get_or_create(user=request.user)
+#     user_data = get_object_or_404(UserData, user=request.user)
+#     if request.method == 'POST':
+#         prompt = request.POST.get('prompt')
+#         response = get_response(prompt)
+#         ChatData.objects.create(user_chat=user_data, prompt=prompt, response=response)
 
 def get_chat_data(request):
     if request.user.is_authenticated:
