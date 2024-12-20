@@ -16,7 +16,7 @@
     "Insecurity", "Pride", "Compassion", "Affection", "Trust", "Distress", "Despair", "Inspiration", 
     "Betrayal", "Disappointment", "Confusion", "Nervousness", "Peace", "Serenity", "Frustration", 
     "Sadness", "Empathy", "Hopefulness", "Eagerness", "Motivation", "Caring", "Optimism", 
-    "Desperation", "Worry", "Hurt", "Healing", "Contentment", "Angst", "Isolation", 
+    "Desperation", "Worry", "Hurt", "Healing", "Contentment", "Angst", "Isolation", "Hi", 
     "Self-doubt", "Nostalgia", "Trustworthiness", "Vulnerability", "Reluctance", "Skepticism", 
     "Surprise", "Loneliness", "Exhilaration", "Satisfaction", "Comfort", "Resentment", "Reluctance", 
     "Apathy", "Excitement", "Fear of failure", "Grief", "Acceptance", "Boredom", "Fatigue", 

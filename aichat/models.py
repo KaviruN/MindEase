@@ -13,9 +13,4 @@ class ChatData(models.Model):
     prompt = models.CharField(max_length=125, null=True, default='')
     response = models.TextField(max_length=10000, null=True,default='')
     created = models.DateField(auto_now=True)
-
-    def __str__(self):
-        return str(self.created)
     
-    class Meta:
-        ordering = ['-created']

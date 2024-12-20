@@ -1,0 +1,26 @@
+.flex {
+    color: hsl(0, 0%, 100%);
+    & h2 {
+      line-height: 1.2;
+    }
+    // &__register form {
+
+    //   // .fa-heart {
+    //   //   color: red;
+    //   // }
+
+    //   // & h3 {
+    //   //   color: hsla(0, 0%, 100%, 0.773);
+    //   // }
+
+    // //   & h2 {
+    // //     font-weight: 500;
+    // //   }
+    // //   & h3 {
+    // //     font-weig
+    // }
+    
+  }
+.fa-heart {
+    color: red;
+}
