@@ -48,18 +48,6 @@ def get_response(prompt):
       return "Sorry, I can't help with that."
     
 
-# def chat(request):
-#     if not request.user.is_authenticated:
-#         return redirect('user_auth:sign_in')
-#     UserData.objects.get_or_create(user=request.user)
-#     user_data = get_object_or_404(UserData, user=request.user)
-#     chat_data = user_data.user_data.all().order_by('-id')
-#     if request.method == 'POST':
-#         prompt = request.POST.get('prompt')
-#         response = get_response(prompt)
-#         ChatData.objects.create(user_chat=user_data, prompt=prompt, response=response)
-#     return render(request, 'chat.html', {'chat_data': chat_data})
-
 
 def chat_view(request):
     if not request.user.is_authenticated:
