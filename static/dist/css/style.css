@@ -531,6 +531,10 @@ body.no-scroll {
   align-items: center;
   justify-content: center;
 }
+.home__main h1 {
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: hsla(0, 1.49%, 26.27%, 0.5608);
+}
 @media (max-width: 768px) {
   .home__main {
     min-height: 50vh;

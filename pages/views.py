@@ -21,7 +21,11 @@ def user_profile(request):
     
 
 def home(request):
-    return render(request, 'home.html')
+    context = {}
+    if request.user.is_authenticated:
+        user = User.objects.filter(username=request.user).first()
+        context = {'user':user}
+    return render(request, 'home.html', context)
 
 def about(request):
     return render(request, 'about.html')

@@ -19,6 +19,10 @@
     align-items: center;
     justify-content: center;
     
+    & h1{
+      -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-color: hsl(0deg 1.49% 26.27% / 56.08%);
+    }
 
     @media (max-width: 768px) {
       min-height: 50vh;
