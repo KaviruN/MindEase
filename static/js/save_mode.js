@@ -1,7 +1,7 @@
 $(document).on('change', '#usermode', function(e) {
     e.preventDefault();
     $.ajax({
-        url: '/save-mode/',
+        url: '/mode-tracker/',
         type: 'POST',
         data: {
             usermode: $('input[name=usermode]:checked').val(),

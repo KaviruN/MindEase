@@ -4,11 +4,20 @@ from .models import DailyFeeling
 from datetime import date
 from django.http import JsonResponse,HttpResponse
 
-
 def mode_tracker(request):
     if not request.user.is_authenticated:
         return redirect('user_auth:sign_in')
     today = date.today()
+    message = ''
+    if request.method == 'POST':
+        usermode = request.POST.get('usermode')
+        daily_feeling, created = DailyFeeling.objects.get_or_create(user=request.user, date=today)
+        daily_feeling.feeling = usermode
+        daily_feeling.save()
+        return HttpResponse('Your feeling has been recorded.' if created else 'Your feeling has been updated.')
+        
+        # return render(request, 'mode_tracker.html', {'message': message, 'usermode': usermode})
+    
     return render(request, 'mode_tracker.html', {'today': today})
 
 def get_mode(request):
@@ -21,12 +30,3 @@ def get_mode(request):
             usermode = ''
         return JsonResponse({'usermode': usermode})
     
-def save_mode(request):
-    today = date.today()
-    message = ''
-    if request.method == 'POST':
-        usermode = request.POST.get('usermode')
-        daily_feeling, created = DailyFeeling.objects.get_or_create(user=request.user, date=today)
-        daily_feeling.feeling = usermode
-        daily_feeling.save()
-        return ('Your feeling has been recorded.' if created else 'Your feeling has been updated.')
