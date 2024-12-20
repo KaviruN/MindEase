@@ -50,15 +50,23 @@
         }
 
         &--input{
+            width: 100%;
+            display: flex;
             margin-top: 1.5em;
             flex-direction: row;
             align-items: center;
             justify-content: space-between;
             justify-items: center;
 
-            & input{
-                margin-bottom: 0;
-            }
+            & input {
+                width: 90%;
+                padding: 1em;
+                border-radius: 1.1em;
+                // border: 1px solid var(--color-text);
+                font-size: 1rem;
+                border: none;
+                outline: 3px solid transparent;
+              }
             
         }
         &--button{

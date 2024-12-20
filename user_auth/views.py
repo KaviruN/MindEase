@@ -64,7 +64,7 @@ def sign_in(request):
             user = authenticate(username=username, password=password)
             if user is not None:
                 login(request, user)
-                return redirect('pages:profile')  # Redirect to home page or any other page
+                return redirect('pages:home')
             else:
                 form.add_error(None, 'Invalid username or password')
         else:

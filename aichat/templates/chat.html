@@ -12,18 +12,17 @@
             <form method="POST">{% csrf_token %}
                 <div class="flex__chat">
                     {% for data in chat_data %}
+                    <div class="flex__chat--response">
+                        <p>{{ data.response }}</p>
+                    </div>
                         <div class="flex__chat--promt">
                             <p>{{ data.prompt }}</p>
                         </div>
-                        <div class="flex__chat--response">
-                            <p>{{ data.response }}</p>
-                        </div>
-    
                     {% endfor %}
                 </div>
                 <h2 class="flex__logintitle">What can I help with?</h2>
                 
-                <div class="flex__input flex__chat--input">
+                <div class="flex__chat--input">
                     <input name="prompt" id="prompt" placeholder="Massage MindEase Ai" required>
                     <button class="flex__chat--button"><i class="ri-arrow-up-line"></i></button>
                 </div>       
