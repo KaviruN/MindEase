@@ -3,6 +3,7 @@ from django.contrib.auth.decorators import login_required
 from .models import DailyFeeling
 from django.contrib.auth.decorators import login_required
 from datetime import date
+from django.http import JsonResponse
 
 @login_required
 def mode_tracker(request):
@@ -17,6 +18,20 @@ def mode_tracker(request):
         
         # return render(request, 'mode_tracker.html', {'message': message, 'usermode': usermode})
     
-    daily_feeling = DailyFeeling.objects.filter(user=request.user).first()
-    usermode = daily_feeling.feeling if daily_feeling else None
-    return render(request, 'mode_tracker.html', {'usermode': usermode, 'today': today, 'message': message,})
+    daily_feeling = DailyFeeling.objects.filter(user=request.user).latest('date')
+    if str(daily_feeling.date) == str(today):
+        print('done')
+        usermode = daily_feeling.feeling
+    else:
+        print('ndone')
+        usermode = ''
+    return render(request, 'mode_tracker.html', {'today': today, 'usermode':usermode, 'message': message,})
+
+def get_mode(request):
+    today = date.today()
+    daily_feeling = DailyFeeling.objects.filter(user=request.user).latest('date')
+    if str(daily_feeling.date) == str(today):
+        usermode = daily_feeling.feeling
+    else:
+        usermode = ''
+    return JsonResponse({'usermode': usermode})
