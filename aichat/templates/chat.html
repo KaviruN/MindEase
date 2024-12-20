@@ -3,6 +3,7 @@
 {% block title %}Chat With Ai{% endblock %}
 
 {% block content %}
+{% load static %}
 
 <div class="container__form">
     <div class="flex">
@@ -11,14 +12,14 @@
 
             <form method="POST">{% csrf_token %}
                 <div class="flex__chat">
-                    {% for data in chat_data %}
+                    <!-- {% for data in chat_data %}
                     <div class="flex__chat--response">
                         <p>{{ data.response }}</p>
                     </div>
                         <div class="flex__chat--promt">
                             <p>{{ data.prompt }}</p>
                         </div>
-                    {% endfor %}
+                    {% endfor %} -->
                 </div>
                 <h2 class="flex__logintitle">What can I help with?</h2>
                 
@@ -31,7 +32,7 @@
 
     </div>
 </div>
-
+<script src="{% static 'js/get_chat_data.js' %}"></script>
 
 
 {% endblock %}

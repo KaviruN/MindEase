@@ -1,10 +1,11 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from openai import OpenAI
 from dotenv import load_dotenv
 from django.conf import settings
 import os
 from .models import *
 from django.contrib.auth.decorators import login_required
+from django.http import HttpResponse, JsonResponse
 
 load_dotenv()
 
@@ -46,17 +47,33 @@ def get_response(prompt):
     elif not filter_prompt(prompt):
       return "Sorry, I can't help with that."
     
-@login_required
-def chat(request):
-    UserData.objects.get_or_create(user=request.user)
-    user_data = get_object_or_404(UserData, user=request.user)
-    chat_data = user_data.user_data.all().order_by('-id')
-    print(chat_data)
-    if request.method == 'POST':
-        prompt = request.POST.get('prompt')
-        response = get_response(prompt)
-        ChatData.objects.create(user_chat=user_data, prompt=prompt, response=response)
-    return render(request, 'chat.html', {'chat_data': chat_data})
+
+# def chat(request):
+#     if not request.user.is_authenticated:
+#         return redirect('user_auth:sign_in')
+#     UserData.objects.get_or_create(user=request.user)
+#     user_data = get_object_or_404(UserData, user=request.user)
+#     chat_data = user_data.user_data.all().order_by('-id')
+#     if request.method == 'POST':
+#         prompt = request.POST.get('prompt')
+#         response = get_response(prompt)
+#         ChatData.objects.create(user_chat=user_data, prompt=prompt, response=response)
+#     return render(request, 'chat.html', {'chat_data': chat_data})
+
+
+def chat_view(request):
+   return render(request, 'chat.html')
+
+
+def get_chat_data(request):
+    if request.user.is_authenticated:
+      UserData.objects.get_or_create(user=request.user)
+      user_data = get_object_or_404(UserData, user=request.user)
+      chat_data = user_data.user_data.all().order_by('-id').values()
+      return JsonResponse({'chat_data':list(chat_data)})
+
+
+
 
 
 
