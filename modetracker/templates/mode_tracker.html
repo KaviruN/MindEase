@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 
+{% load static %}
     
     {% block content %}
     <div class="modetracker" style="padding: 2em; width: 100%;" >
@@ -9,7 +10,7 @@
             <form action="" method="POST">{% csrf_token %}
                 <div class="feedback">
                     <label class="angry" >
-                        <input type="radio" value="Angry" name="usermode" {% if  usermode == "Angry"%}checked{% endif %}/>
+                        <input type="radio" value="Angry" name="usermode" />
                         <div title="Feeling Angry">
                             <svg class="eye left">
                                 <use xlink:href="#eye">
@@ -23,7 +24,7 @@
                         </div>
                     </label>
                     <label class="sad">
-                        <input type="radio" value="Sad" name="usermode" {% if  usermode == "Sad"%}checked{% endif %}/>
+                        <input type="radio" value="Sad" name="usermode" />
                         <div title="Feeling Sad">
                             <svg class="eye left">
                                 <use xlink:href="#eye">
@@ -37,11 +38,11 @@
                         </div>
                     </label>
                     <label class="ok" title="Ok">
-                        <input type="radio" value="Ok" name="usermode" {% if  usermode == "Ok"%}checked{% endif %}/>
+                        <input type="radio" value="Ok" name="usermode" />
                         <div></div>
                     </label>
                     <label class="good">
-                        <input type="radio" value="Good" name="usermode" {% if  usermode == "Good"%}checked{% endif %}/>
+                        <input type="radio" value="Good" name="usermode" />
                         <div title="Feeling Good">
                             <svg class="eye left">
                                 <use xlink:href="#eye">
@@ -55,7 +56,7 @@
                         </div>
                     </label>
                     <label class="happy">
-                        <input type="radio" value="Happy" name="usermode" {% if  usermode == "Happy"%}checked{% endif %}/>
+                        <input type="radio" value="Happy" name="usermode" />
                         <div title="Feeling Happy">
                             <svg class="eye left">
                                 <use xlink:href="#eye">
@@ -88,6 +89,7 @@
             {% if  usermode == "Good" %}<iframe src="https://www.youtube.com/embed/B5u-SGDfS_s?si=cYl3TX7-PkyqvXPX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>{% endif %}
             {% if  usermode == "Happy" %}<iframe src="https://www.youtube.com/embed/JJ9GD0SiwEc?si=sUJ0AJqWWR8KnEhd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>{% endif %}
         </div>
-
+        
+        <script src="{% static 'js/get_mode.js' %}"></script>
     </div>
 {% endblock %}
