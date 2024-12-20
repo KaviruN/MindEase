@@ -3,6 +3,7 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
+<div class="container__form">
     {% if user.is_authenticated %}
     <div class="home">
         <div class="home__main flex">
@@ -16,7 +17,6 @@
         </div>
     </div>
     {% else %}
-    <div class="container__form">
         <div class="home">
             <div class="home__main flex">
                 <div class="home__main--content">
@@ -28,6 +28,8 @@
                 </div>
             </div>
         </div>
+    
     {% endif %}
 </div>
+
 {% endblock %}
