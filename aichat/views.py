@@ -14,11 +14,11 @@ def filter_prompt(prompt):
     with open(keywords_path, 'r') as file:
         excluded_keywords = file.read()
     prompt = prompt.lower().split()
-    file.close()
     for keyword in excluded_keywords:
         if keyword in prompt:   
           return True
     return False
+
    
 
 def get_response(prompt):
