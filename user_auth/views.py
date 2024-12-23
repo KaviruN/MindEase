@@ -12,7 +12,7 @@ from django.contrib.auth.models import User
 def send_verification_email(user_email):
     verification_code = random.randint(100000, 999999)  # Generate a 6-digit random number
     subject = 'Your Verification Code'
-    message = f'Your verification code is {verification_code}'
+    message = f'<h1>Your verification code is {verification_code}</h1>'
     email_from = settings.EMAIL_HOST_USER
     recipient_list = [user_email]
     send_mail(subject, message, email_from, recipient_list)
