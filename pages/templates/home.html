@@ -3,12 +3,15 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-<div class="container__form">
+
     {% if user.is_authenticated %}
     <div class="home">
         <div class="home__main flex">
+            <div class="home__main--bg"></div>
+            <div class="home__main--bg2"></div>
             <div class="home__main--content">
-                <h1>Welcome, {{ user.first_name }}</h1>
+                
+                <h1 class="home__main--title">Welcome, {{ user.first_name }}</h1>
                 <h2 class="home__main--subtitle">to MindEase</h2>
                 <p>Your mental health companion designed for students. Track your well-being, access personalized
                     AI-guided support, and find resources to help you thrive.</p>
@@ -19,8 +22,10 @@
     {% else %}
         <div class="home">
             <div class="home__main flex">
+                <div class="home__main--bg"></div>
+                <div class="home__main--bg2"></div>
                 <div class="home__main--content">
-                    <h1>Welcome</h1>
+                    <h1 class="home__main--title">Welcome</h1>
                     <h2 class="home__main--subtitle">to MindEase</h2>
                     <p>Your mental health companion designed for students. Track your well-being, access personalized
                         AI-guided support, and find resources to help you thrive.</p>
@@ -28,8 +33,38 @@
                 </div>
             </div>
         </div>
+        <div class="home">
+            <div class="home__feature-section">
+                <div class="home__feature-section--card home__feature-section--normal">
+                    <img src="{% static 'img/undraw_artificial-intelligence_fuvd.svg' %}" alt="" class="home__feature-section--img">
+                    <h2 class="">AI Chat Help</h2>
+                    <p>Get instant support and guidance through our intelligent chatbot, designed to help you navigate your mental health journey.</p>
+                </div>
+    
+                <div class="home__feature-section--card home__feature-section--large">
+                    <img src="{% static 'img/undraw_active-support_v6g0.svg' %}" alt="" class="home__feature-section--img">
+                    <h2 class="">24/7 Support</h2>
+                    <p>We’re here for you anytime, day or night, so you’re never alone.</p>
+
+                </div>
+
+                <div class="home__feature-section--card  home__feature-section--large2">
+                    <img src="{% static 'img/undraw_happy-music_na4p.svg' %}" alt="" class="home__feature-section--img">
+                    <h2 class="">Mood Tracker</h2>
+                    <p>Monitor your emotions and patterns over time to better understand your mental well-being.</p>
+
+                </div>
+
+                <div class="home__feature-section--card home__feature-section--normal2">
+                    <img src="{% static 'img/undraw_private-data_7v0o.svg' %}" alt="" class="home__feature-section--img">
+                    <h2 class="">Privacy First</h2>
+                    <p>Your data is safe with us. We prioritize your privacy and ensure your information is secure.</p>
+
+                </div>
+            </div>
+        </div>
     
     {% endif %}
-</div>
+
 
 {% endblock %}
