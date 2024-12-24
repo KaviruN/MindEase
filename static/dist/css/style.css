@@ -520,6 +520,9 @@ body.no-scroll {
 .home {
   width: 100%;
 }
+.home__bg {
+  background: hsl(0, 0%, 0%);
+}
 .home__main {
   background-repeat: no-repeat;
   min-height: 90vh;
@@ -537,6 +540,7 @@ body.no-scroll {
   left: 0;
   top: 0;
   position: absolute;
+  min-height: 105vh;
 }
 @media (min-width: 768px) {
   .home__main--bg {
@@ -544,7 +548,7 @@ body.no-scroll {
   }
 }
 .home__main--bg2 {
-  background-image: radial-gradient(circle at right top, hsla(39, 83%, 57%, 0.56), #3d290a 25%, hsla(0, 0%, 0%, 0), hsla(0, 0%, 0%, 0) 65%, hsla(0, 0%, 0%, 0.04));
+  background-image: radial-gradient(circle at right top, hsla(39, 83%, 57%, 0.56), rgba(61, 41, 10, 0) 25%, hsla(0, 0%, 0%, 0), hsla(0, 0%, 0%, 0) 65%, hsla(0, 0%, 0%, 0.04));
   width: 70%;
   min-height: 100vh;
   z-index: -1;
@@ -639,9 +643,15 @@ body.no-scroll {
   border-radius: 1.2em;
   border: 3px solid hsla(0, 0%, 100%, 0.3);
   text-align: center;
+  color: hsla(0, 0%, 100%, 0.859);
+  transition: all 0.3s ease-in;
 }
 .home__feature-section--card > h2 {
   margin-top: 1em;
+}
+.home__feature-section--card:hover, .home__feature-section--card:focus {
+  cursor: pointer;
+  transform: scale(0.97);
 }
 
 @keyframes gradient {

@@ -1,5 +1,10 @@
 .home {
   width: 100%;
+
+  &__bg {
+    background: hsl(0, 0%, 0%);
+  }
+
   &__main {
     &--bg {
       background-image: radial-gradient(
@@ -16,6 +21,7 @@
       left: 0;
       top: 0;
       position: absolute;
+      min-height: 105vh;
 
       @media (min-width: 768px) {
         background-image: radial-gradient(
@@ -32,10 +38,10 @@
       background-image: radial-gradient(
         circle at right top,
         hsla(39, 83%, 57%, 0.56),
-        #3d290a 25%,
-        hsl(0deg 0% 0% / 0%),
+        #3d290a00 25%,
+        hsla(0, 0%, 0%, 0),
         hsla(0, 0%, 0%, 0) 65%,
-        hsl(0deg 0% 0% / 4%)
+        hsla(0, 0%, 0%, 0.04)
       );
       width: 70%;
       min-height: 100vh;
@@ -172,9 +178,18 @@
       border-radius: 1.2em;
       border: 3px solid hsla(0, 0%, 100%, 0.3);
       text-align: center;
+      color: hsla(0, 0%, 100%, 0.859);
+      transition: all 0.3s ease-in;
+      // transition: box-shadow 0;
 
-      & > h2{
+      & > h2 {
         margin-top: 1em;
+      }
+
+      &:hover,
+      &:focus {
+        cursor: pointer;
+        transform: scale(0.97);
       }
     }
   }
