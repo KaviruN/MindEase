@@ -13,19 +13,11 @@
             <form method="POST" id="chat_form">{% csrf_token %}
                 <div class="flex__chat">
                     <div id="loading" style="display: block;">Loading...</div> <!-- Loading message -->
-                    <!-- {% for data in chat_data %}
-                    <div class="flex__chat--response">
-                        <p>{{ data.response }}</p>
-                    </div>
-                        <div class="flex__chat--promt">
-                            <p>{{ data.prompt }}</p>
-                        </div>
-                    {% endfor %} -->
                 </div>
                 <h2 class="flex__logintitle">What can I help with?</h2>
                 
                 <div class="flex__chat--input">
-                    <input name="prompt" id="prompt" placeholder="Massage MindEase Ai" required>
+                    <input name="prompt" id="prompt" placeholder="Message MindEase Ai" required>
                     <button class="flex__chat--button"><i class="ri-arrow-up-line"></i></button>
                 </div>       
             </form>

@@ -517,27 +517,48 @@ body.no-scroll {
   background: linear-gradient(14deg, hsl(39, 73%, 61%), hsl(39, 74%, 68%));
 }
 
+.home {
+  width: 100%;
+}
+.home__bg {
+  background: hsl(0, 0%, 0%);
+}
 .home__main {
-  background: linear-gradient(-45deg, hsl(244, 61%, 15%) 0%, hsl(0, 0%, 0%) 25%, hsl(39, 70%, 71%) 50%, hsl(0, 0%, 0%) 75%, hsl(39, 84%, 68%) 100%);
-  background-size: 400% 400%;
-  animation: gradient 15s ease infinite;
   background-repeat: no-repeat;
   min-height: 90vh;
-  border-radius: 1.1em;
-  outline: 3px solid hsl(0, 1%, 63%);
   justify-items: center;
   align-items: center;
   box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
   align-items: center;
   justify-content: center;
 }
-.home__main h1 {
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: hsla(0, 1.49%, 26.27%, 0.5608);
+.home__main--bg {
+  background-image: radial-gradient(circle at left center, hsla(39, 83%, 57%, 0.56), #3d290a 25%, hsl(0, 0%, 0%), #000000 65%, hsl(0, 0%, 0%));
+  width: 100%;
+  min-height: 100vh;
+  z-index: -1;
+  left: 0;
+  top: 0;
+  position: absolute;
+  min-height: 105vh;
 }
-@media (max-width: 768px) {
-  .home__main {
-    min-height: 50vh;
+@media (min-width: 768px) {
+  .home__main--bg {
+    background-image: radial-gradient(circle at left center, hsla(39, 100%, 44.36%, 0.62), #000000 25%, hsl(0, 0%, 0%), #000000 65%, hsl(0, 0%, 0%));
+  }
+}
+.home__main--bg2 {
+  background-image: radial-gradient(circle at right top, hsla(39, 83%, 57%, 0.56), rgba(61, 41, 10, 0) 25%, hsla(0, 0%, 0%, 0), hsla(0, 0%, 0%, 0) 65%, hsla(0, 0%, 0%, 0.04));
+  width: 70%;
+  min-height: 100vh;
+  z-index: -1;
+  right: 0;
+  position: absolute;
+  top: 0;
+}
+@media (min-width: 768px) {
+  .home__main--bg2 {
+    background-image: radial-gradient(circle at right top, hsla(39, 83%, 57%, 0.55), hsla(36.47, 96.74%, 33.84%, 0.32) 25%, hsla(0, 0%, 0%, 0), hsla(0, 0%, 0%, 0) 65%, hsla(0, 0%, 0%, 0.04));
   }
 }
 .home__main--content {
@@ -556,11 +577,11 @@ body.no-scroll {
 }
 .home__main--btn {
   background: linear-gradient(14deg, hsl(39, 83%, 77%), hsl(39, 80%, 68%));
-  color: hsl(0, 0%, 100%);
+  color: hsl(0, 0%, 0%);
   padding: 0.5em 1em;
   border-radius: 1.1em;
   font-size: 1.1rem;
-  font-weight: 700;
+  font-weight: 500;
   text-transform: uppercase;
   margin-top: 1em;
   transition: all 0.3s;
@@ -572,16 +593,82 @@ body.no-scroll {
 .home__main--btn:hover {
   background: linear-gradient(14deg, hsl(39, 70%, 71%), hsl(39, 83%, 57%));
 }
+.home__feature-section {
+  background-color: hsl(0, 0%, 0%);
+  display: grid;
+  padding: 1.5em;
+  justify-content: center;
+  justify-items: center;
+}
+@media (min-width: 768px) {
+  .home__feature-section {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "large large normal" "normal2 large2 large2";
+  }
+}
+@media (min-width: 768px) {
+  .home__feature-section--large {
+    grid-area: large;
+  }
+}
+@media (min-width: 768px) {
+  .home__feature-section--large2 {
+    grid-area: large2;
+  }
+}
+@media (min-width: 768px) {
+  .home__feature-section--normal {
+    grid-area: normal;
+  }
+}
+@media (min-width: 768px) {
+  .home__feature-section--normal2 {
+    grid-area: normal2;
+  }
+}
+.home__feature-section--img {
+  width: 100%;
+  height: 25vh;
+}
+.home__feature-section--card {
+  margin: 1.5em;
+  padding: 1.75em;
+  width: 98%;
+  background-color: hsl(40, 13%, 9%);
+  background-image: radial-gradient(at 88% 40%, hsl(0, 0%, 0%) 0px, hsla(0, 0%, 0%, 0) 85%), radial-gradient(at 49% 30%, hsl(240, 15%, 9%) 0px, transparent 85%), radial-gradient(at 14% 26%, hsl(0, 0%, 0%) 0px, transparent 85%), radial-gradient(at 0% 64%, hsl(39, 100%, 25.72%) 0px, transparent 85%), radial-gradient(at 41% 94%, hsl(39, 95.68%, 37.45%) 0px, transparent 85%), radial-gradient(at 100% 99%, hsl(39, 44.28%, 4.69%) 0px, transparent 85%);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  box-shadow: 0px -16px 24px 0px rgba(255, 255, 255, 0.25) inset;
+  border-radius: 1.2em;
+  border: 3px solid hsla(0, 0%, 100%, 0.3);
+  text-align: center;
+  color: hsla(0, 0%, 100%, 0.859);
+  transition: all 0.3s ease-in;
+}
+.home__feature-section--card > h2 {
+  margin-top: 1em;
+}
+.home__feature-section--card:hover, .home__feature-section--card:focus {
+  cursor: pointer;
+  transform: scale(0.97);
+}
 
 @keyframes gradient {
   0% {
-    background-position: 0% 50%;
+    background-position: center;
   }
-  50% {
+  25% {
     background-position: 100% 50%;
   }
-  100% {
+  50% {
     background-position: 0% 50%;
+  }
+  75% {
+    background-position: 50% 50%;
+  }
+  100% {
+    background-position: center;
   }
 }
 .flex__support {
