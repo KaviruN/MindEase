@@ -11,8 +11,8 @@ import os
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-%g^_d+kp@r0(vnjw675-ko&+0tj#18615q@(u1@(qxhwuk14%+'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+
+DEBUG = DEBUG = os.getenv('DJANGO_DEBUG', 'True') == 'True'
 
 ALLOWED_HOSTS = ['mind-ease-c040c2e0a11d.herokuapp.com']
 
