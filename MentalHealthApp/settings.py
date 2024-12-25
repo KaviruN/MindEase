@@ -12,7 +12,7 @@ import os
 SECRET_KEY = 'django-insecure-%g^_d+kp@r0(vnjw675-ko&+0tj#18615q@(u1@(qxhwuk14%+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['mind-ease-c040c2e0a11d.herokuapp.com']
 
