@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify Code</title>
+</head>
+<body>
+    <h2>Verify Your Email</h2>
+    <form method="post">
+        {% csrf_token %}
+        <label for="verification_code">Verification Code</label>
+        <input type="number" name="code1" id="in1" min="0" max="9" minlength="1" maxlength="1" required>
+        <input type="number" name="code2" id="in2" min="0" max="9" minlength="1" maxlength="1" required>
+        <input type="number" name="code3" id="in3" min="0" max="9" minlength="1" maxlength="1" required>
+        <input type="number" name="code4" id="in4" min="0" max="9" minlength="1" maxlength="1" required>
+        <input type="number" name="code5" id="in5" min="0" max="9" minlength="1" maxlength="1" required>
+        <input type="number" name="code6" id="in6" min="0" max="9" minlength="1" maxlength="1" required>
+        <button type="submit">Verify</button>
+    </form>
+</body>
+</html>
