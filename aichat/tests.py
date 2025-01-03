@@ -11,25 +11,26 @@
 # elif os.getenv("OPENAI_API_KEY"):
 #     print("API key found")
 
-# client = OpenAI(
-#   base_url="https://integrate.api.nvidia.com/v1",
-#   api_key=os.getenv("OPENAI_API_KEY")
-# )
+# def get_response(prompt):
+#     client = OpenAI(
+#                 base_url = "https://integrate.api.nvidia.com/v1",
+#                 api_key = os.getenv("OPENAI_API_KEY")
+#             )
+    
+#     completion = client.chat.completions.create(
+#       model="mistralai/mistral-7b-instruct-v0.3",
+#       messages=[{"role":"user","content":prompt}],
+#       temperature=0.2,
+#       top_p=0.7,
+#       max_tokens=1024,
+#       stream=True
+#     )
 
-# completion = client.openai.ChatCompletion.create(
-#   model="mistralai/mistral-7b-instruct-v0.3",
-#   messages=[
-#     {"role": "system", "content": "You are a helpful assistant specialized in mental health advice.if not show 'i cant help with that if you need help in mental helth, feel free to ask.'"},
-#     {"role": "user", "content": "how to maeke a django model?"},
-#   ],
-#   temperature=0.5,
-#   top_p=1,
-#   max_tokens=1024,
-#   stream=True
-# )
+#     result = ""
+#     for chunk in completion:
+#         if chunk.choices[0].delta.content is not None:
+#             result += chunk.choices[0].delta.content
 
-# for chunk in completion:
-#   if chunk.choices[0].delta.content is not None:
-#     print(chunk.choices[0].delta.content, end="")
+#     print(result)
 
-# # print(completion)
+# get_response("Hello, how are you?")  # This will raise an error because the function does not return anything

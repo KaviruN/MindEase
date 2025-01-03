@@ -9,6 +9,14 @@ from django.http import HttpResponse, JsonResponse
 
 load_dotenv()
 
+
+
+if not os.getenv("OPENAI_API_KEY"):
+    raise ValueError("Please set the OPENAI_API_KEY environment variable.")
+    brake
+elif os.getenv("OPENAI_API_KEY"):
+    print("API key found")
+
 def filter_prompt(prompt):
     keywords_path = os.path.join(settings.BASE_DIR, 'keywords.txt')
     with open(keywords_path, 'r') as file:
