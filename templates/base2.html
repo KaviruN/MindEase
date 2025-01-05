@@ -23,9 +23,9 @@
     <nav class="navbar" >
         <img src="{% static 'img/colorlogo.png' %}" width="150px" class="">
         <ul class="navbar__list">
-            <li class="navbar__iterms"><a href="{% url 'pages:home' %}">Home</a></li>
+            <li class="navbar__iterms"><a href="">Home</a></li>
             <li class="navbar__iterms"><a href="{% url 'pages:contact' %}">Contact</a></li>
-            <li class="navbar__iterms"><a href="">Service</a></li>
+            <li class="navbar__iterms"><a href="#service">Service</a></li>
             <li class="navbar__iterms"><a href="{% url 'pages:about' %}">About</a></li>
         </ul>
         <ul class="navbar__list right">
@@ -58,7 +58,7 @@
             <ul class="navbar__mobile--list">
                 <li class=""><a  href="{% url 'pages:home' %}">Home</a></li>
                 <li class=""><a href="{% url 'pages:contact' %}">Contact</a></li>
-                <li class=""><a href="">Service</a></li>
+                <li class=""><a href="{% url 'pages:home' %}">Service</a></li>
                 <li class=""><a href="{% url 'pages:about' %}">About</a></li>
                 {% if not user.is_authenticated %}
                     {% if request.resolver_match.url_name == 'sign_up' %}

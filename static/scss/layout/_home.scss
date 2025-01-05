@@ -1,5 +1,6 @@
 .home {
   width: 100%;
+  position: relative;
 
   &__bg {
     background: hsl(0, 0%, 0%);
@@ -193,6 +194,43 @@
       }
     }
   }
+
+  &__descriptions{
+    min-height: 100vh;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+
+    &--section{
+      width: 70%;
+      padding: 0 5em 5em;
+      background: hsl(0deg 0.97% 28.17% / 11%);
+      align-items: center;
+      align-items: center;
+      justify-items: center;
+      justify-content: center;
+      backdrop-filter: blur(10px);
+      border: 2px solid hsla(0, 0%, 100%, 0.3);
+      align-content: center;
+      border-radius: 1.1em;
+    }
+  }
+
+  &__headline {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: hsl(0, 0%, 100%);
+    text-align: center;
+    margin-top: 2em;
+  }
+
+  &__description {
+    font-size: 1.2rem;
+    color: hsl(0, 0%, 80%);
+    text-align: center;
+    margin-top: 1em;
+    padding: 0 1em;
+  }
 }
 
 @keyframes gradient {
@@ -211,4 +249,21 @@
   100% {
     background-position: center;
   }
+}
+
+.blur {
+  position: absolute;
+  min-height: 100vh;
+  width: 100%;
+  top: 0;
+  z-index: -1;
+  background: hsl(0deg 0% 22.87% / 4%);
+  filter: blur(31px);
+}
+
+.video {
+  position: absolute;
+  z-index: -2;
+  width: 100%;
+  
 }

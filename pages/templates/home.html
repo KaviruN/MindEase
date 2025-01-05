@@ -20,7 +20,7 @@
         </div>
     </div>
     {% else %}
-        <div class="home">
+        <div class="home" >
             <div class="home__main flex">
                 <div class="home__main--bg"></div>
                 <div class="home__main--bg2"></div>
@@ -36,7 +36,7 @@
     
     {% endif %}
     <div class="home">
-        <div class="home__feature-section">
+        <div class="home__feature-section" id="service">
             <div class="home__feature-section--card home__feature-section--normal">
                 <img src="{% static 'img/undraw_artificial-intelligence_fuvd.svg' %}" alt="" class="home__feature-section--img">
                 <h2 class="">AI Chat Help</h2>
@@ -52,7 +52,7 @@
 
             </div>
 
-            <div class="home__feature-section--card  home__feature-section--large2">
+            <div class="home__feature-section--card  home__feature-section--large2" >
                 <img src="{% static 'img/undraw_happy-music_na4p.svg' %}" alt="" class="home__feature-section--img">
                 <h2 class="">Mood Tracker</h2>
                 <p>Regularly monitor your emotions, thoughts, and behavioral patterns over time to gain deeper insights into your mental well-being, identify triggers or recurring themes, and take proactive, informed steps toward cultivating a healthier and more balanced mindset.</p>
@@ -65,6 +65,21 @@
                 <p>Your data is safe with us. We prioritize your privacy and ensure your information is secure.</p>
 
             </div>
+        </div>
+    </div>
+
+    <div class="home home__descriptions">
+        <div class="video">
+            <video autoplay muted loop width="100%" height="100%">
+                <source src="{% static 'img/mmm.webm' %}" type="video/mp4">
+            </video>
+        </div>
+        <div class="blur"></div>
+        <div class="home__descriptions--section">
+            <h1 class="home__headline">Your Mental Health Companion</h1>
+            <p class="home__description">
+                Discover a supportive space designed to help students manage their mental well-being. MindBridge offers tools and guidance tailored to your needs, all at your fingertips.
+            </p>
         </div>
     </div>
 
