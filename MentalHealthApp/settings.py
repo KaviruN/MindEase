@@ -14,9 +14,9 @@ SECRET_KEY = 'django-insecure-%g^_d+kp@r0(vnjw675-ko&+0tj#18615q@(u1@(qxhwuk14%+
 
 DEBUG = os.getenv('DJANGO_DEBUG', 'True') == 'True'
 
-ALLOWED_HOSTS = ['mind-ease-c040c2e0a11d.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['mind-ease-0919e926f677.herokuapp.com', '127.0.0.1']
 
-CSRF_TRUSTED_ORIGINS = ["https://mind-ease-c040c2e0a11d.herokuapp.com"]
+CSRF_TRUSTED_ORIGINS = ["https://mind-ease-0919e926f677.herokuapp.com/"]
 # Application definition
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
