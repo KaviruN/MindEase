@@ -12,7 +12,7 @@ import os
 SECRET_KEY = 'django-insecure-%g^_d+kp@r0(vnjw675-ko&+0tj#18615q@(u1@(qxhwuk14%+'
 
 
-DEBUG = os.getenv('DJANGO_DEBUG', 'True') == 'False'
+DEBUG = os.getenv('DJANGO_DEBUG', 'True') == 'True'
 
 ALLOWED_HOSTS = ['mind-ease-3781ff30e9c9.herokuapp.com', '127.0.0.1']
 
