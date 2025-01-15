@@ -4,7 +4,6 @@ from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.conf import settings
-from django.core.mail import send_mail
 from datetime import datetime
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
@@ -28,13 +27,17 @@ def send_verification_email(user_email, username):
     plain_message = strip_tags(convert_to_html_content)
     email_from = settings.EMAIL_HOST_USER
     recipient_list = [user_email]
-    send_mail(
+    try:
+        send_mail(
         subject=subject,
         message=plain_message,
         from_email=email_from,
         recipient_list=recipient_list ,  # recipient_list is self explainatory
         html_message=convert_to_html_content  # Optional
     )
+        print(f'email send done - {username}')
+    except:
+        print(f'email send fail - {username}')
     
     return verification_code
 

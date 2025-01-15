@@ -206,9 +206,24 @@
     position: relative;
     overflow: hidden;
 
+    &--bg{
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      display: grid;
+      top: 0;
+      align-items: center;
+      justify-items: center;
+      z-index: -2;
+
+      &:first-child {
+        height: 100%;
+      }
+    }
+
     &--section {
       width: 70%;
-      padding: 0 5em 5em;
+      padding: 3em;
       background: hsl(0deg 0.97% 28.17% / 11%);
       align-items: center;
       align-items: center;
@@ -224,7 +239,9 @@
       }
 
       @media (max-width: 768px) {
-        padding: 0;
+        padding: 1em;
+        width: 100%;
+        margin: 1em;
       }
     }
   }
@@ -234,7 +251,6 @@
     font-weight: bold;
     color: hsl(0, 0%, 100%);
     text-align: center;
-    margin-top: 2em;
   }
 
   &__description {
@@ -272,66 +288,4 @@
   z-index: -1;
   background: hsl(0deg 0% 22.87% / 4%);
   filter: blur(31px);
-}
-
-.video {
-  position: absolute;
-  z-index: -2;
-  width: 100%;
-}
-
-/* From Uiverse.io by MikeAndrewDesigner */
-
-.wave {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0.6;
-  margin-left: -50%;
-  margin-top: -70%;
-  z-index: -2;
-  background: linear-gradient(744deg, #efc16c, #d89a5e 40%, #8c5629 60%, black);
-}
-
-.wave:nth-child(2),
-.wave:nth-child(3) {
-  bottom: 5em;
-}
-
-.playing .wave {
-  border-radius: 40%;
-  animation: wave 3000ms infinite linear;
-}
-
-.wave {
-  border-radius: 40%;
-  animation: wave 55s infinite linear;
-}
-
-.playing .wave:nth-child(2) {
-  animation-duration: 4000ms;
-}
-
-.wave:nth-child(2) {
-  animation-duration: 50s;
-}
-
-.playing .wave:nth-child(3) {
-  animation-duration: 5000ms;
-}
-
-.wave:nth-child(3) {
-  animation-duration: 45s;
-}
-
-@keyframes wave {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
 }
