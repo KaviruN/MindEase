@@ -42,7 +42,7 @@ def contact(request):
 
         if name and email and message:
             try:
-                send_mail(subject, message, settings.EMAIL_HOST_USER, ['kavirunethsara1@outlook.com'])
+                send_mail(subject, message, settings.EMAIL_HOST_USER, ['mindeaseorg@gmail.com'])
                 context['result'] = 'Message sent successfully'
             except Exception as e:
                 context['result'] = f'Error sending message: {e}'
