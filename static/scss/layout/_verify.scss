@@ -1,39 +1,41 @@
 .verify {
+  & h2 {
+    text-align: center;
+    margin-bottom: 1em;
+  }
 
-    & h2{
-        text-align: center;
-        margin-bottom: 1em;
-    }
-
-    & form{
-        align-items: center;
-        flex-direction: column;
-    }
-        /* Chrome, Safari, Edge, Opera */
-    input::-webkit-outer-spin-button,
-    input::-webkit-inner-spin-button {
+  & form {
+    align-items: center;
+    flex-direction: column;
+  }
+  /* Chrome, Safari, Edge, Opera */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
-    }
+  }
 
-    /* Firefox */
-    input[type=number] {
+  /* Firefox */
+  input[type="number"] {
     -moz-appearance: textfield;
-}
+  }
 
-    &__inputs{
-        &--num{
-            background: var(--color-background);
-            aspect-ratio: 1 / 1;
-            /* padding: .5em; */
-            text-align: center;
-            margin: .5em;
-            caret-color: hsl(0, 0%, 100%);
-            color: hsl(0, 0%, 100%);
-            font-size: 1rem;
-            border-radius: 1.1em;
-            border: 2px solid hsla(0, 0%, 100%, 0.532);
+  &__inputs {
+    &--num {
+      background: var(--color-background);
+      aspect-ratio: 1 / 1;
+      padding: 1.75em;
+      text-align: center;
+      caret-color: hsl(0, 0%, 100%);
+      color: hsl(0, 0%, 100%);
+      font-size: 1rem;
+      border-radius: 1.1em;
+      border: 2px solid hsla(0, 0%, 100%, 0.532);
 
-        }
+      @media (max-width: 768px) {
+        padding: 0.5em;
+        font-size: 0.75em;
+      }
     }
+  }
 }
