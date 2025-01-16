@@ -9,7 +9,7 @@ import os
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-%g^_d+kp@r0(vnjw675-ko&+0tj#18615q@(u1@(qxhwuk14%+'
+SECRET_KEY = ''
 
 
 DEBUG = os.getenv('DJANGO_DEBUG', 'True') == 'True'
@@ -19,12 +19,12 @@ ALLOWED_HOSTS = ['mind-ease-3781ff30e9c9.herokuapp.com', '127.0.0.1']
 CSRF_TRUSTED_ORIGINS = ["https://mind-ease-3781ff30e9c9.herokuapp.com/"]
 # Application definition
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_BACKEND = ''
+EMAIL_HOST = ''
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'mindeaseorg@gmail.com'
-EMAIL_HOST_PASSWORD = 'wskv kjpq lxsn ovjl'
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
 
 
 
@@ -75,7 +75,7 @@ WSGI_APPLICATION = 'MentalHealthApp.wsgi.application'
 
 
 
-tmpPostgres = urlparse('postgresql://neondb_owner:rQ6ZdT3gefPJ@ep-withered-bar-a18qqjcs.ap-southeast-1.aws.neon.tech/neondb?sslmode=require')
+tmpPostgres = urlparse('')
 
 DATABASES = {
     'default': {
