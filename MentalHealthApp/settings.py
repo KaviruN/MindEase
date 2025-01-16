@@ -11,7 +11,6 @@ import os
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = ''
 
-
 DEBUG = os.getenv('DJANGO_DEBUG', 'True') == 'True'
 
 ALLOWED_HOSTS = ['mind-ease-3781ff30e9c9.herokuapp.com', '127.0.0.1']
