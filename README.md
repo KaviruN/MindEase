@@ -1,4 +1,4 @@
-# Mental Health Chat Application
+# MINDEASE Chat Application
 
 This is a Django-based web application designed to provide mental health support through an AI-powered chat assistant. The application allows users to interact with the AI, save chat history, and retrieve past conversations.
 
